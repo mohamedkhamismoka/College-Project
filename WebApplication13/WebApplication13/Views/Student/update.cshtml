@@ -1,0 +1,113 @@
+﻿@model StudentVM
+@{
+    ViewData["Title"] = "update";
+}
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<link rel="stylesheet" href="~/assets/css/student.css" />
+<link href="~/assets/jquery-editable-select.css" rel="stylesheet">
+
+}
+
+<h2>Update Student </h2>
+
+
+
+<form class="create" asp-controller="Student" asp-action="update" method="post" enctype="multipart/form-data" >
+    <input type="hidden" class="form-control"  placeholder="Enter Name"  value="@Model.imgname" name="oldimg" >
+    <div class="form-group">
+
+        <label asp-for="Name"> Student Name:</label><br />
+        <input type="text" asp-for="Name"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="Name"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="address"> Student Address:</label><br />
+        <input type="text" asp-for="address"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="address"></span>
+        </div>
+
+           <div class="form-group">
+        <label asp-for="img"> Current Student image:</label><br />
+         <img src="~/images/@Model.imgname" class="img-thumbnail" width=200 height=200 />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="img"></span>
+        </div>
+    </div>
+
+           <div class="form-group">
+        <label > New Student image:</label><br />
+        <input type="file" asp-for="img"   class="form-control" />
+        <br />
+                <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="img"></span>
+        </div>
+       
+    </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="phone"> Student phone:</label><br />
+        <input type="phone" asp-for="phone"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="phone"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="mail">  Student mail:</label><br />
+        <input type="text" asp-for="mail"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="mail"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="BirthDate">  Student Birthdate:</label><br />
+        <input type="date" asp-for="BirthDate"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="BirthDate"></span>
+        </div>
+      </div>
+         <div class="form-group">
+        <label asp-for="DepartmentId">  Student Department:</label><br />
+       <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.departments" class="form-control" style="background-color: white;color: black;">
+       <option >
+           Select Department
+       </option>
+
+       </select>
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="DepartmentId"></span>
+        </div>
+
+    </div>
+    <center>
+        <div style="margin-top:-25px;">
+        <button type="submit" class="btn btn-primary" >Update</button>
+        <a asp-controller="Student" asp-action="Index" class="btn btn-success">Back To Home</a>
+        </div>
+    </center>
+</form>
+@section js{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/assets/jquery.editable-select.js"></script>
+<script src="~/assets/Select.js"></script>
+    
+}
+
+
+

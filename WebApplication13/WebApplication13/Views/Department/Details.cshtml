@@ -1,0 +1,36 @@
+﻿@model DepartmentVM
+@{
+    ViewData["Title"] = "Details";
+}
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+
+<link rel="stylesheet" href="~/assets/css/student.css" />
+
+
+}
+<center>
+<h2> Department Details </h2>
+</center>
+
+
+
+
+<form class="create" asp-controller="Department" asp-action="Create" method="post"  >
+    <div class="form-group">
+        <label asp-for="Name"> Department Name:</label><br />
+        <input type="text" asp-for="Name"  class="form-control" readonly />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="Name"></span>
+        </div>
+
+
+        </div>
+          <center>
+        <div style="margin-top:-25px;">
+      
+        <a asp-controller="Department" asp-action="Index" class="btn btn-success">Back To Home</a>
+        </div>
+    </center>
+        </form>

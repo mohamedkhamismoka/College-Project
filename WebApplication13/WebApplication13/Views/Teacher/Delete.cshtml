@@ -1,0 +1,72 @@
+﻿@model TeacherVM
+@{
+    ViewData["Title"] = "Delete";
+}
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<link rel="stylesheet" href="~/assets/css/student.css" />
+
+}
+
+<h2> Delete Lecturer  </h2>
+
+
+
+<form class="create" asp-controller="Teacher" asp-action="Delete" method="post" enctype="multipart/form-data" >
+    <div class="form-group">
+        <label asp-for="Name"> Student Name:</label><br />
+        <input type="text" asp-for="Name"  class="form-control" disabled />
+  
+    
+
+    </div>
+       <div class="form-group">
+        <label asp-for="address">  Lecturer Address:</label><br />
+        <input type="text" asp-for="address"  class="form-control" disabled />
+        
+
+    </div>
+
+    <div class="form-group">
+  <label asp-for="img">  Lecturer image:</label><br />
+      <img src="~/images/@Model.imgname" class="img-thumbnail" width=200 height=200 />
+    </div>
+       <div class="form-group">
+        <label asp-for="phone"> Lecturer phone:</label><br />
+        <input type="phone" asp-for="phone"  class="form-control" disabled />
+ 
+     
+
+    </div>
+       <div class="form-group">
+        <label asp-for="mail"> Lecturer mail:</label><br />
+        <input type="text" asp-for="mail"  class="form-control" disabled />
+        
+      
+
+    </div>
+
+       <div class="form-group">
+        <label asp-for="BirthDate"> Lecturer Birthdate:</label><br />
+        <input type="date" asp-for="BirthDate"  class="form-control" disabled />
+        </div>
+
+             <div class="form-group">
+        <label asp-for="DepartmentId"> Lecturer Department:</label><br />
+       <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.departments" class="form-control" style="background-color: white;color: black;" disabled>
+
+
+       </select>
+       
+
+    </div>
+      
+    <center>
+        <div>
+      <button  type="submit" class="btn btn-danger">Delete</button>
+        <a asp-controller="Teacher" asp-action="Index" class="btn btn-success">Back To Home</a>
+        </div>
+    </center>
+</form>
+
+

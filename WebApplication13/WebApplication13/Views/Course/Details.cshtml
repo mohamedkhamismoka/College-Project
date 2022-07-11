@@ -1,0 +1,66 @@
+﻿@model CourseVM
+@{
+    ViewData["Title"] = "Details";
+}
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<link rel="stylesheet" href="~/assets/css/student.css" />
+
+}
+
+<h2> Course  Details</h2>
+
+
+
+<form class="create" asp-controller="Course" asp-action="update" method="post"  >
+    <input type="hidden" asp-for="CourseId" />
+    <div class="form-group">
+        <label asp-for="Name"> Course Name:</label><br />
+        <input type="text" asp-for="Name"  class="form-control"  readonly/>
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="Name"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="hours">  Cours Hours:</label><br />
+        <input type="number" asp-for="hours"  class="form-control" readonly />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="hours"></span>
+        </div>
+
+    </div>
+   <div class="form-group">
+        <label asp-for="TeacherId"> Choose Course Lecturer:</label><br />
+       <select disabled asp-for="TeacherId" asp-items="(SelectList)ViewBag.teachers" class="form-control" style="background-color: white;color: black;">
+       <option >
+           Select Teacher
+       </option>
+
+       </select>
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="TeacherId"></span>
+        </div>
+
+    </div>
+       
+      
+   
+    <center>
+        <div style="margin-top:-10px;">
+      
+        <a asp-controller="Course" asp-action="Index" class="btn btn-success">Back To Home</a>
+        </div>
+    </center>
+</form>
+@section js{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}
+
+

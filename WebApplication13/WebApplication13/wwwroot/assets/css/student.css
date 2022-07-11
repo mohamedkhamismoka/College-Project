@@ -1,0 +1,31 @@
+﻿h2 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    color: red;
+}
+
+.create {
+    margin-top: 50px;
+    width: 600px;
+    position: absolute;
+    height: 800px;
+    left: 50%;
+    transform: translate(-50%,0)
+}
+
+.page-body-wrapper {
+    height: 1000px;
+}
+
+.main-panel {
+    height: 800px
+}
+
+.footer {
+    display: none;
+}
+
+body {
+    overflow-y: scroll
+}

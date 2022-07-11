@@ -1,0 +1,61 @@
+﻿@model paymentVM
+@inject IStudent std;
+@{
+    ViewData["Title"] = "Details";
+
+}
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<link rel="stylesheet" href="~/assets/css/student.css" />
+
+}
+
+<h2>Payment Details </h2>
+
+
+
+<form class="create" >
+    <div class="form-group">
+        <label asp-for="StudentId"> Student ID:</label><br />
+        <input type="text" asp-for="StudentId"  class="form-control" readonly />
+        <br />
+     
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StudentId"> Student Name:</label><br />
+        <input type="text" value="@std.Getbyid(Model.StudentId).Name"  class="form-control" readonly/>
+        <br />
+      
+
+    </div>
+       <div class="form-group">
+        <label asp-for="Academic_year"> Student Academic year:</label><br />
+        <input type="number" asp-for="Academic_year"  class="form-control" readonly />
+        <br />
+      
+
+    </div>
+       <div class="form-group">
+        <label asp-for="Term">Term:</label><br />
+        <input type="number" asp-for="Term"  class="form-control" readonly/>
+        <br />
+        
+
+    </div>
+    <center>
+        <div style="margin-top:-10px;">
+     
+        <a asp-controller="Payment" asp-action="Gate" class="btn btn-success">Back To Home</a>
+        </div>
+    </center>
+</form>
+@section js{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}
+
+

@@ -1,0 +1,77 @@
+﻿@model paymentVM
+@{
+    ViewData["Title"] = "Create";
+}
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<link rel="stylesheet" href="~/assets/css/student.css" />
+<link href="~/assets/jquery-editable-select.css" rel="stylesheet">
+
+}
+
+<h2>Create New Payment </h2>
+
+
+
+<form class="create"  asp-controller="Payment" asp-action="Create" method="post"  >
+    <div class="form-group">
+        <label asp-for="StudentId"> Choose Student ID:</label><br />
+       <select asp-for="StudentId" asp-items="(SelectList)ViewBag.students" class="form-control" style="background-color: white;color: black;">
+       <option >
+           Select Student ID
+       </option>
+
+       </select>
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="StudentId"></span>
+        </div>
+        </div>
+
+       <div class="form-group">
+        <label asp-for="Academic_year"> Enter Student Academic year:</label><br />
+        <input type="number" asp-for="Academic_year"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="Academic_year"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="Term"> Enter Term:</label><br />
+        <input type="number" asp-for="Term"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="Term"></span>
+        </div>
+
+
+    </div>
+
+     <div class="form-group">
+        <label asp-for="money"> Enter Payed Money:</label><br />
+        <input type="text" asp-for="money"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="money"></span>
+        </div>
+
+
+    </div>
+    <center>
+        <div style="margin-top:-10px;">
+        <button type="submit" class="btn btn-primary" >Create</button>
+        <a asp-controller="Student" asp-action="Index" class="btn btn-success">Back To Home</a>
+        </div>
+    </center>
+</form>
+@section js{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+      <script src="~/assets/jquery.editable-select.js"></script>
+<script src="~/assets/Select.js"></script>
+
+}
+
+

@@ -1,0 +1,108 @@
+﻿@model TeacherVM
+@{
+    ViewData["Title"] = "Create";
+}
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<link rel="stylesheet" href="~/assets/css/student.css" />
+<link href="~/assets/jquery-editable-select.css" rel="stylesheet">
+
+}
+
+<h2>Create New Teacher </h2>
+
+
+
+<form class="create" asp-controller="Teacher" asp-action="Create" method="post" enctype="multipart/form-data" >
+    <div class="form-group">
+        <label asp-for="Name"> Enter Teacher Name:</label><br />
+        <input type="text" asp-for="Name"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="Name"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="address"> Enter Teacher Address:</label><br />
+        <input type="text" asp-for="address"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="address"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="phone"> Enter Teacher phone:</label><br />
+        <input type="phone" asp-for="phone"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="phone"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="mail"> Enter Teacher mail:</label><br />
+        <input type="text" asp-for="mail"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="mail"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="BirthDate"> Enter Teacher Birthdate:</label><br />
+        <input type="date" asp-for="BirthDate"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="BirthDate"></span>
+        </div>
+         <div class="form-group">
+        <label asp-for="img"> Choose Teacher image:</label><br />
+        <input type="file" asp-for="img"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="img"></span>
+        </div>
+    </div>
+
+           <div class="form-group">
+        <label asp-for="cv"> Choose Teacher CV:</label><br />
+        <input type="file" asp-for="cv"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="cv"></span>
+        </div>
+    </div>
+      <div class="form-group">
+        <label asp-for="DepartmentId"> Choose Teacher Department:</label><br />
+       <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.departments" class="form-control" style="background-color: white;color: black;">
+       <option >
+           Select Department
+       </option>
+
+       </select>
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="DepartmentId"></span>
+        </div>
+
+    </div>
+    <center>
+        <div style="margin-top:-10px;">
+        <button type="submit" class="btn btn-primary" >Create</button>
+        <a asp-controller="Student" asp-action="Index" class="btn btn-success">Back To Home</a>
+        </div>
+    </center>
+</form>
+
+
+@section js{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/assets/jquery.editable-select.js"></script>
+<script src="~/assets/Select.js"></script>
+    
+
+}

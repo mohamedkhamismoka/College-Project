@@ -1,0 +1,15 @@
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\obj\Debug\net5.0\WebApplication13.DAL.csproj.AssemblyReference.cache
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\obj\Debug\net5.0\WebApplication13.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\obj\Debug\net5.0\WebApplication13.DAL.AssemblyInfoInputs.cache
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\obj\Debug\net5.0\WebApplication13.DAL.AssemblyInfo.cs
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\obj\Debug\net5.0\WebApplication13.DAL.csproj.CoreCompileInputs.cache
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\bin\Debug\net5.0\WebApplication13.DAL.deps.json
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\bin\Debug\net5.0\WebApplication13.DAL.runtimeconfig.json
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\bin\Debug\net5.0\WebApplication13.DAL.runtimeconfig.dev.json
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\bin\Debug\net5.0\WebApplication13.DAL.dll
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\bin\Debug\net5.0\ref\WebApplication13.DAL.dll
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\bin\Debug\net5.0\WebApplication13.DAL.pdb
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\obj\Debug\net5.0\WebApplication13.DAL.dll
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\obj\Debug\net5.0\ref\WebApplication13.DAL.dll
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\obj\Debug\net5.0\WebApplication13.DAL.pdb
+C:\Users\EL-Masria\source\repos\WebApplication13\WebApplication13.DAL\obj\Debug\net5.0\WebApplication13.DAL.genruntimeconfig.cache

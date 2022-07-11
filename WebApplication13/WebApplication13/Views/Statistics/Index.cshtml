@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<link rel="stylesheet" href="~/assets/css/student.css" />
+<link href="~/assets/jquery-editable-select.css" rel="stylesheet">
+<style>
+    .card{
+       display:inline-block;
+       height:350px;
+       border:1px solid white;
+       padding:0px;
+       margin-left:10px;
+       margin-top:75px;
+      
+    }
+    .card:hover{
+           border:3px solid red;
+    }
+    .card-img-top{
+        height:150px;
+        width:100%;
+
+    }
+</style>
+}
+<center>
+<div class="container">
+ 
+
+
+
+  <div class="card col-lg-5 col-md-4 col-sm-12">
+    <img class="card-img-top" src="~/assets/images/download (4).jfif" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">Get Payment Detail</h4>
+      <form asp-controller="Statistics" asp-action="GetPayment" method="get">
+                <div class="form-group">
+        <label  style="float:left"> Student Name:</label><br />
+       <select name="studentid" asp-items="(SelectList)ViewBag.students" class="form-control" style="background-color: white;color: black;" >
+
+
+       </select>
+       
+
+    </div>
+
+      <button type="submit"  class="btn btn-primary">See Results</button>
+      </form>
+    </div>
+  </div>
+
+
+    <div class="card col-lg-5 col-md-4 col-sm-12">
+    <img class="card-img-top" src="~/assets/images/download (6).jfif" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">Course Degress Detail</h4>
+      
+      <form asp-controller="Statistics" asp-action="GetDegree" method="get">
+                <div class="form-group">
+        <label  style="float:left"> Course Name:</label><br />
+       <select name="courseid" asp-items="(SelectList)ViewBag.courses" class="form-control" style="background-color: white;color: black;" >
+
+
+       </select>
+       
+
+    </div>
+
+      <button type="submit"  class="btn btn-primary">See Results</button>
+      </form>
+
+    </div>
+  </div>
+</div> 
+</center>
+@section js{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/assets/jquery.editable-select.js"></script>
+<script src="~/assets/Select.js"></script>
+    
+
+}
+
+  
+

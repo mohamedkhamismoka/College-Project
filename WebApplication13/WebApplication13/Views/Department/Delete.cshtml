@@ -1,0 +1,65 @@
+﻿@model DepartmentVM
+@{
+    ViewData["Title"] = "Create";
+}
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<style>
+    h2 {
+ position:absolute;
+left:50%;
+transform:translate(-50%);
+   
+    color: red;
+}
+
+.create {
+    margin-top:50px;
+
+    width: 600px;
+    position: absolute;
+    height:800px;
+    left: 50%;
+    transform: translate(-50%,0)
+}
+.page-body-wrapper{
+    height:800px;
+}
+.main-panel{
+    height:800px
+}
+body{
+    overflow-y:scroll
+}
+</style>
+
+}
+
+<h2>Delete Department </h2>
+
+
+
+<form class="create" asp-controller="Department" asp-action="Delete" method="post"  >
+  <input type="hidden" asp-for="DepartmentId" />
+
+
+     
+    <div class="form-group">
+        <label asp-for="Name"> Department Name:</label><br />
+        <input type="text" asp-for="Name"  class="form-control" disabled />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="Name"></span>
+        </div>
+
+
+        </div>
+          <center>
+        <div style="margin-top:-25px;">
+        <button type="submit" class="btn btn-primary">Delete</button>
+        <a asp-controller="Department" asp-action="Index" class="btn btn-success">Back To Home</a>
+        </div>
+    </center>
+        </form>
+
+

@@ -1,0 +1,73 @@
+﻿@model StudentVM
+@{
+    ViewData["Title"] = "Delete";
+}
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<link rel="stylesheet" href="~/assets/css/student.css" />
+<link href="~/assets/jquery-editable-select.css" rel="stylesheet">
+
+
+}
+
+<h2>  Delete Student  </h2>
+
+
+
+<form class="create" asp-controller="Student" asp-action="Delete" method="post" enctype="multipart/form-data" >
+    <input type="hidden" asp-for="StudentId" />
+
+
+    <div class="form-group">
+        <label asp-for="Name"> Student Name:</label><br />
+        <input type="text" asp-for="Name"  class="form-control" readonly />
+  
+    
+
+    </div>
+       <div class="form-group">
+        <label asp-for="address">  Student Address:</label><br />
+        <input type="text" asp-for="address"  class="form-control" readonly />
+        
+
+    </div>
+
+    <div class="form-group">
+  <label asp-for="img">  Student image:</label><br />
+      <img src="~/images/@Model.imgname" class="img-thumbnail" width=100 height=100 />
+    </div>
+       <div class="form-group">
+        <label asp-for="phone"> Student phone:</label><br />
+        <input type="phone" asp-for="phone"  class="form-control" readonly />
+ 
+     
+
+    </div>
+       <div class="form-group">
+        <label asp-for="mail"> Student mail:</label><br />
+        <input type="text" asp-for="mail"  class="form-control" readonly />
+        
+      
+
+    </div>
+
+       <div class="form-group">
+        <label asp-for="BirthDate"> Student Birthdate:</label><br />
+        <input type="date" asp-for="BirthDate"  class="form-control" readonly />
+        </div>
+         <div class="form-group">
+        <label asp-for="DepartmentId">  Student Department:</label><br />
+       <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.departments" class="form-control" style="background-color: white;color: black;">
+       <option >
+           Select Department
+       </option>
+
+       </select>
+       </div>
+    <center>
+        <div>
+              <button type="submit" class="btn btn-danger" >Delete</button>
+        <a asp-controller="Student" asp-action="Index" class="btn btn-success">Back To Home</a>
+        </div>
+    </center>
+</form>

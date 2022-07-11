@@ -1,0 +1,135 @@
+﻿@model TeacherVM;
+@{
+    ViewData["Title"] = "update";
+}
+
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<link rel="stylesheet" href="~/assets/css/student.css" />
+<link href="~/assets/jquery-editable-select.css" rel="stylesheet">
+<style>
+    .page-body-wrapper {
+    height: 1200px;
+}
+
+.main-panel {
+    height: 800px
+}
+
+</style>
+}
+
+<h2>Update Teacher </h2>
+
+
+
+<form class="create" asp-controller="Teacher" asp-action="update" method="post" enctype="multipart/form-data" >
+    <input type="hidden"  value="@Model.imgname"  name="oldimg"/>
+        <input type="hidden"  value="@Model.Cvname"  name="oldcv"/>
+          <input type="hidden" asp-for="@Model.TeacherId"/>
+    <div class="form-group">
+        <label asp-for="Name"> Teacher Name:</label><br />
+        <input type="text" asp-for="Name"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="Name"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="address">  Teacher Address:</label><br />
+        <input type="text" asp-for="address"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="address"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="phone">  Teacher phone:</label><br />
+        <input type="phone" asp-for="phone"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="phone"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="mail">  Teacher mail:</label><br />
+        <input type="text" asp-for="mail"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="mail"></span>
+        </div>
+
+    </div>
+       <div class="form-group">
+        <label asp-for="BirthDate">  Teacher Birthdate:</label><br />
+        <input type="date" asp-for="BirthDate"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="BirthDate"></span>
+        </div>
+        </div>
+         <div class="form-group">
+        <label asp-for="img"> Teacher image:</label><br />
+       <img src="~/images/@Model.imgname"  width="200" height="100"/><br />
+    </div>
+
+        <div class="form-group">
+        <label asp-for="img"> New Teacher image:</label><br />
+        <input type="file" asp-for="img"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="img"></span>
+        </div>
+    </div>
+
+           <div class="form-group">
+        <label asp-for="cv">  Teacher CV:</label><br />
+     <a  class="btn btn-success" style="height:36px"  asp-controller="Teacher" asp-action="Download" asp-route-filename="@Model.Cvname" > <p style="margin-top:5px">Download CV</p> </a>
+
+    </div>
+
+         <div class="form-group">
+        <label asp-for="cv">  New Teacher CV:</label><br />
+        <input type="file" asp-for="cv"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="cv"></span>
+        </div>
+    </div>
+      <div class="form-group">
+        <label asp-for="DepartmentId">  Teacher Department:</label><br />
+       <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.departments" class="form-control" style="background-color: white;color: black;">
+       <option >
+           Select Department
+       </option>
+
+       </select>
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="DepartmentId"></span>
+        </div>
+
+    </div>
+    <center>
+        <div style="margin-top:-10px;">
+        <button type="submit" class="btn btn-primary" >Update</button>
+        <a asp-controller="Teacher" asp-action="Index" class="btn btn-success">Back To Home</a>
+        </div>
+    </center>
+</form>
+
+
+@section js{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/assets/jquery.editable-select.js"></script>
+<script src="~/assets/Select.js"></script>
+    
+
+}
+
+

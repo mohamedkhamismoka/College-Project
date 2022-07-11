@@ -1,0 +1,42 @@
+﻿@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<link rel="stylesheet" href="~/assets/css/student.css" />
+
+}
+<h2>Send E-mail</h2>
+
+<center>
+   <h4 class="text-danger">@ViewBag.message</h4>
+</center>
+
+<form class="create" asp-controller="Message" asp-action="send" method="post">
+    <div class="form-group">
+         <label>Enter Your outlook Mail:</label>
+         <input type="email" name="sendermail"  required class="form-control"/>
+    <br />
+    </div>
+    <div class="form-group">
+         <label>Enter Your Password:</label>
+         <input type="text"  name="senderpass"  required class="form-control"/>
+    <br />
+    </div>
+
+     <div class="form-group">
+         <label>Enter Reciever outlook Mail:</label>
+         <input type="email" name="recievermail"  required class="form-control"/>
+    <br />
+    </div>
+
+     <div class="form-group">
+         <label style="margin-top:50px">Enter Your Message:</label>
+        <textarea cols="50" rows="5" name="message">
+
+        </textarea>
+    <br />
+    </div>
+             <center>
+        <div style="margin-top:-5px;">
+        <button type="submit" class="btn btn-warning" style="width:130px">Send<i style="position:absolute" class="mdi mdi-telegram"></i></button>
+        </div>
+        </center>
+</form>

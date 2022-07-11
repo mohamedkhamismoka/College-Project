@@ -1,0 +1,46 @@
+﻿
+@model DepartmentVM
+@{
+    ViewData["Title"] = "Create";
+}
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+
+<link rel="stylesheet" href="~/assets/css/student.css" />
+<link href="~/assets/jquery-editable-select.css" rel="stylesheet">
+}
+
+<h2>Create Department </h2>
+
+
+
+<form class="create" asp-controller="Department" asp-action="Create" method="post"  >
+ 
+    <div class="form-group">
+        <label asp-for="Name"> Enter Department Name:</label><br />
+        <input type="text" asp-for="Name"  class="form-control" />
+        <br />
+        <div class="text-danger font-weight-bold" >
+            <span asp-validation-for="Name"></span>
+        </div>
+
+
+        </div>
+          <center>
+        <div style="margin-top:-25px;">
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a asp-controller="Department" asp-action="Index" class="btn btn-success">Back To Home</a>
+        </div>
+    </center>
+        </form>
+
+
+        @section js{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/assets/jquery.editable-select.js"></script>
+<script src="~/assets/Select.js"></script>
+    
+
+}

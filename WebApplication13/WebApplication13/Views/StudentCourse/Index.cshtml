@@ -1,0 +1,139 @@
+﻿@model StudentVM
+@inject IstudentCourse std_crs;
+@inject ICourse crs;
+@{
+    ViewData["Title"] = "Assign Course";
+}
+@section css{
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<link rel="stylesheet" href="~/assets/css/student.css" />
+<link href="~/assets/jquery-editable-select.css" rel="stylesheet">
+<style>
+    .page-body-wrapper {
+    height: 1200px;
+}
+
+</style>
+
+}
+
+<h2>Student Data </h2>
+<center>
+    <input type="hidden" value="@Model.StudentId" id="stid" />
+<div  class="create" >
+
+
+    <div class="form-group">
+        <label asp-for="Name" style="float:left"> Student Name:</label><br />
+        <input type="text" asp-for="Name"  class="form-control" readonly />
+  
+    
+
+    </div>
+       <div class="form-group">
+        <label asp-for="address" style="float:left">  Student Address:</label><br />
+        <input type="text" asp-for="address"  class="form-control" readonly />
+        
+
+    </div>
+
+
+       <div class="form-group">
+        <label asp-for="mail" style="float:left"> Student mail:</label><br />
+        <input type="text" asp-for="mail"  class="form-control" readonly />
+        
+      
+
+    </div>
+
+
+             <div class="form-group">
+        <label asp-for="DepartmentId" style="float:left"> Student Department:</label><br />
+       <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.departments" class="form-control" style="background-color: white;color: black;" disabled>
+
+
+       </select>
+       
+
+    </div>
+
+     
+    <div class="form-group">
+           <label style="float:left" > select Course:</label><br />
+       <select  id="course"  asp-items="(SelectList)ViewBag.courses" class="form-control" style="background-color: white;color: black;" >
+           <option>Select course</option>
+
+       </select>
+       
+    </div>
+
+     
+    <div class="form-group">
+           <label style="float:left" >Enter Academic year:</label><br />
+       <input type="number"  id="year"    class="form-control" style="background-color: white;color: black;" />
+
+
+       
+    </div>
+
+    <div class="form-group">
+           <label style="float:left" >Enter Term:</label><br />
+       <input type="number"  id="term"    class="form-control" style="background-color: white;color: black;" />
+
+
+       
+    </div>
+
+    
+       
+       <div class="form-group">
+           <label style="float:left" >Enter Degree:</label><br />
+       <input type="number"  id="degree"    class="form-control" style="background-color: white;color: black;" />
+
+
+       
+    </div>
+    <button class="btn btn-warning add">  Add</button>
+
+<table class="table table-bordered table-striped table-hover text-center degrees" style="margin-top:10px">
+    <thead>
+        <tr>
+            <th>Student_id</th>
+            <th>Course_id</th>
+                <th>Course Name</th>
+                    <th>Degree</th>
+                        <th>update</th>
+                        <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in std_crs.GetStudent_Courses(Model.StudentId))
+       {
+           <tr>
+               <td id="std">@item.StudentId</td>
+               <td id="crsid">@item.CourseId</td>
+                <td id="crs">@crs.getname(item.CourseId)</td>
+                
+                <td id="deg">@item.degree</td>
+                <td> <button class="btn btn-primary upd"><i class="mdi mdi-pencil-box"></i></button></td>
+                <td>  <button class="btn btn-danger del"><i class="mdi mdi-eraser"></i></button></td>
+           </tr>
+       }
+    </tbody>
+
+</table>
+</div>
+</div>
+
+</center>
+@section js{
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/assets/ajax.js"></script>
+      <script src="~/assets/jquery.editable-select.js"></script>
+<script src="~/assets/Select.js"></script>
+   
+     
+}
+
+
+

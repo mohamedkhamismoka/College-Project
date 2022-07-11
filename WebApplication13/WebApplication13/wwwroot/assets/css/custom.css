@@ -1,0 +1,36 @@
+﻿
+.footer {
+    margin-top: 570px;
+}
+
+body {
+    height: 721px;
+    color: white;
+}
+
+.main-panel {
+    background: #191c24;
+    color: white;
+}
+
+input.form-control, .dataTables_length select {
+    background-color: white;
+    color: black;
+}
+    input.form-control:focus, .dataTables_length select:focus {
+        background-color: white;
+        color: black;
+    }
+
+    nav#sidebar {
+        border-right: 1px solid white;
+    }
+
+.dataTable .btn {
+    height: 30px;
+   
+}
+.table td img{
+    height:76px;
+    width:70px;
+}
