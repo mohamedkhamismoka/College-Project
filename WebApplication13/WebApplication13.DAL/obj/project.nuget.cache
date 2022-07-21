@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ytdDo8vamDlv3oErZGlGEkXUvgPQUxHqWu8jCBZLhkPqxKV6lzjbvm/mtBC0uRRkIJorvJybOVEiFOW5uA8lyw==",
+  "dgSpecHash": "aQp28BZ6XJwHAdTYq+bq3i3gCN3taNxiqUtj+Jg5V4S3DQ/22I7UjHlX8P9wn4r7eI8VAg1UKotbRxemCG7LFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\EL-Masria\\source\\repos\\WebApplication13\\WebApplication13.DAL\\WebApplication13.DAL.csproj",
+  "projectFilePath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13.DAL\\WebApplication13.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EL-Masria\\.nuget\\packages\\entityframework\\5.0.0\\entityframework.5.0.0.nupkg.sha512",
     "C:\\Users\\EL-Masria\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

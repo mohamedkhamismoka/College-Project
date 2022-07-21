@@ -1,17 +1,66 @@
 ﻿@{
     ViewData["Title"] = "Choose Action";
 }
+}
 @section css{
 <link rel="stylesheet" href="~/assets/css/custom.css" />
 <link rel="stylesheet" href="~/assets/css/student.css" />
+<link href="~/assets/jquery-editable-select.css" rel="stylesheet">
 <style>
-    body{
-       overflow-y:hidden
+    .card{
+       display:inline-block;
+       height:350px;
+       border:1px solid white;
+       padding:0px;
+       margin-left:10px;
+       margin-top:75px;
+      transition:0.3s ease-in-out;
+      opacity:0.7;
+    }
+    .card:hover{
+           border:3px solid red;
+            opacity:1;
+    }
+    .card-img-top{
+        height:150px;
+        width:100%;
+
     }
 </style>
 }
 
-<div  class="create container ">
+
+ <h3 class="text-center text-danger" style="margin-bottom:10px">@TempData["error"] </h3>
+<div class="container">
+ 
+
+
+
+  <div class="card col-lg-5 col-md-4 col-sm-12">
+    <img class="card-img-top" src="~/images/upd.jfif" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">update Payment </h4>
+        <form  asp-controller="Payment"  asp-action="update" method="get" style="width:100%">
+                    <input type="text"  name="payid" placeholder="Payment id to update"/>
+                     <button class="btn btn-danger" type="submit" > Update</button>
+                </form>
+    </div>
+  </div>
+
+
+    <div class="card col-lg-5 col-md-4 col-sm-12">
+    <img class="card-img-top" src="~/images/det.jfif" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">Payment Detail</h4>
+        <form  asp-controller="Payment"  asp-action="Details" method="get" style="width:100%">
+                    <input type="text"  placeholder="Payment id to get details" name="payid"/>
+                     <button class="btn btn-danger" type="submit" > Get Details</button>
+                </form>
+
+    </div>
+  </div>
+</div> 
+@*<div  class="create container ">
     <h3 class="text-center text-danger" style="margin-bottom:10px">@TempData["error"] </h3>
     <div class="row" >
         <div class="col-lg-10">
@@ -40,5 +89,5 @@
 
 </div>
 
-
+*@
 
