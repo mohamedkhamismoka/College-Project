@@ -19,14 +19,16 @@ namespace WebApplication13.Controllers
         private readonly IstudentCourse stdcrs;
         private readonly IPayment pay;
         private readonly ICourse crs;
+        private readonly DataBase db;
 
-        public StatisticsController(IMapper mapper,IStudent std,IstudentCourse stdcrs,IPayment pay, ICourse crs)
+        public StatisticsController(IMapper mapper,IStudent std,IstudentCourse stdcrs,IPayment pay, ICourse crs,DataBase db)
         {
             this.mapper = mapper;
             this.std = std;
             this.stdcrs = stdcrs;
             this.pay = pay;
             this.crs = crs;
+            this.db = db;
         }
         public IActionResult Index()
         {
@@ -48,7 +50,7 @@ namespace WebApplication13.Controllers
                               where x.CourseId == courseid && x.degree < 50
 
                               select x).Count();
-
+       
 
             var res = mapper.Map<IEnumerable<StudentcourseVM>>(data);
             return View(res);

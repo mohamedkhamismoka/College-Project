@@ -158,11 +158,25 @@ namespace WebApplication13.Controllers
 
         }
 
+        public MemoryStream down(string filename)
+        {
+            var path = Directory.GetCurrentDirectory() + "/wwwroot/files/" + filename + "";
+            var memory = new MemoryStream();
+            var net = new System.Net.WebClient();
+            var data = net.DownloadData(path);
+            var content = new MemoryStream(data);
+            memory = content;
 
+            memory.Position = 0;
+            return memory;
+        }
         public IActionResult Download(string filename)
         {
-            var stream = new FileStream(Directory.GetCurrentDirectory()+"/wwwroot/files/"+ filename+"", FileMode.Open);
-            return new FileStreamResult(stream, "application/pdf");
+            var mem=down(filename);
+            return File(mem.ToArray(), "application/pdf", filename);
+
+
+           
         }
     }
 }
