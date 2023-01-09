@@ -49,6 +49,7 @@ namespace WebApplication13.Controllers
                     teacher.create(data);
                     return RedirectToAction("Index");
                 }
+                ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
                 return View(tech);
             }
             catch(Exception e)

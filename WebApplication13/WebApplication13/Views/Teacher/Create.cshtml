@@ -9,13 +9,13 @@
 
 }
 
-<h2>Create New Teacher </h2>
+<h2>Create New lecturer </h2>
 
 
 
 <form class="create" asp-controller="Teacher" asp-action="Create" method="post" enctype="multipart/form-data" >
     <div class="form-group">
-        <label asp-for="Name"> Enter Teacher Name:</label><br />
+        <label asp-for="Name"> Enter lecturer Name:</label><br />
         <input type="text" asp-for="Name"  class="form-control" />
         <br />
         <div class="text-danger font-weight-bold" >
@@ -24,7 +24,7 @@
 
     </div>
        <div class="form-group">
-        <label asp-for="address"> Enter Teacher Address:</label><br />
+        <label asp-for="address"> Enter lecturer Address:</label><br />
         <input type="text" asp-for="address"  class="form-control" />
         <br />
         <div class="text-danger font-weight-bold" >
@@ -33,7 +33,7 @@
 
     </div>
        <div class="form-group">
-        <label asp-for="phone"> Enter Teacher phone:</label><br />
+        <label asp-for="phone"> Enter lecturer phone:</label><br />
         <input type="phone" asp-for="phone"  class="form-control" />
         <br />
         <div class="text-danger font-weight-bold" >
@@ -42,7 +42,7 @@
 
     </div>
        <div class="form-group">
-        <label asp-for="mail"> Enter Teacher mail:</label><br />
+        <label asp-for="mail"> Enter lecturer mail:</label><br />
         <input type="text" asp-for="mail"  class="form-control" />
         <br />
         <div class="text-danger font-weight-bold" >
@@ -51,14 +51,14 @@
 
     </div>
        <div class="form-group">
-        <label asp-for="BirthDate"> Enter Teacher Birthdate:</label><br />
+        <label asp-for="BirthDate"> Enter lecturer Birthdate:</label><br />
         <input type="date" asp-for="BirthDate"  class="form-control" />
         <br />
         <div class="text-danger font-weight-bold" >
             <span asp-validation-for="BirthDate"></span>
         </div>
          <div class="form-group">
-        <label asp-for="img"> Choose Teacher image:</label><br />
+        <label asp-for="img"> Choose lecturer image:</label><br />
         <input type="file" asp-for="img"  class="form-control" />
         <br />
         <div class="text-danger font-weight-bold" >
@@ -67,7 +67,7 @@
     </div>
 
            <div class="form-group">
-        <label asp-for="cv"> Choose Teacher CV:</label><br />
+        <label asp-for="cv"> Choose lecturer CV:</label><br />
         <input type="file" asp-for="cv"  class="form-control" />
         <br />
         <div class="text-danger font-weight-bold" >
@@ -75,7 +75,7 @@
         </div>
     </div>
       <div class="form-group">
-        <label asp-for="DepartmentId"> Choose Teacher Department:</label><br />
+        <label asp-for="DepartmentId"> Choose lecturer Department:</label><br />
        <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.departments" class="form-control" style="background-color: white;color: black;">
        <option >
            Select Department
