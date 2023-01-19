@@ -4,37 +4,49 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Mail;
+using MailKit.Net.Smtp;
+
 using System.Text;
 using System.Threading.Tasks;
 using WebApplication13;
 
 
+
+
 namespace WebApplication13.BL.services
 {
     public class sender : Mailsender
-    { 
-        public void sendmail(string mailfrom,string mailto,string pass, string title, string body)
+    {
+        public async Task sendmail(string mailfrom, string body)
         {
-            var email = new MimeMessage
+            var email = new MimeMessage()
             {
-                Sender = MailboxAddress.Parse(mailfrom),
-                Subject = title
+                Sender = MailboxAddress.Parse("atiffahmykhamis@gmail.com"),
+                Subject = "message from College system from "+ mailfrom
+
 
             };
-            email.To.Add(MailboxAddress.Parse(mailto));
+            email.To.Add(MailboxAddress.Parse("mostafaatif824@gmail.com"));
             var builder = new BodyBuilder();
+
+
             builder.HtmlBody = body;
             email.Body = builder.ToMessageBody();
-            email.From.Add(new MailboxAddress("Pioneers School",mailfrom));
-            var smtp = new SmtpClient();
-            smtp.Host= "smtp-mail.outlook.com";
-            smtp.Port=587;
-            smtp.EnableSsl = true;
-            smtp.Credentials=new NetworkCredential(mailfrom,pass);
-            smtp.Send(mailfrom, mailto,title,body) ;
-            smtp.Dispose();
+           
 
-        }
+            email.From.Add(new MailboxAddress("College system ", "atiffahmykhamis@gmail.com"));
+
+
+            
+                using (var smtp = new SmtpClient())
+                {
+                    smtp.Connect("smtp.gmail.com", 587, false);
+                    smtp.Authenticate("atiffahmykhamis@gmail.com", "esdialkwijqhgter");
+                   await smtp.SendAsync(email);
+                smtp.Disconnect(true);
+                }
+            
+
+            }
     }
 }

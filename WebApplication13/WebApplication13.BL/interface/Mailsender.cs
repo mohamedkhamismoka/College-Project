@@ -8,7 +8,10 @@ namespace WebApplication13.BL
 {
     public interface Mailsender
 {
-        void sendmail(string mailfrom,string mailto, string pass, string title, string body);
+        async Task sendmail(string mailfrom, string body)
+        {
+
+        }
        
 }
 }

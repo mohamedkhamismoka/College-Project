@@ -2,6 +2,7 @@
 using System;
 using System.Net;
 using System.Net.Mail;
+using System.Threading.Tasks;
 using WebApplication13.BL;
 
 namespace WebApplication13.Controllers
@@ -19,14 +20,14 @@ namespace WebApplication13.Controllers
         }
 
         [HttpPost]
-        public IActionResult Send(string sendermail, string senderpass, string recievermail, string message)
+        public async Task<IActionResult> Send(string sendermail, string message)
         {
             try
             {
               
+              await  mailer.sendmail(sendermail, message);
 
-                mailer.sendmail(sendermail,recievermail, senderpass,"Hello", message);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
 
 
             }

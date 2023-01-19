@@ -56,13 +56,17 @@
               "target": "Package",
               "version": "[11.0.0, )"
             },
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.4.3, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.17, )"
             },
             "MimeKit": {
               "target": "Package",
-              "version": "[3.3.0, )"
+              "version": "[3.4.3, )"
             }
           },
           "imports": [
@@ -216,10 +220,6 @@
               "target": "Package",
               "version": "[0.96.0, )"
             },
-            "MailKit": {
-              "target": "Package",
-              "version": "[3.3.0, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.14, )"
@@ -237,10 +237,6 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
-            },
-            "MimeKit": {
-              "target": "Package",
-              "version": "[3.3.0, )"
             },
             "jQuery.Validation": {
               "target": "Package",
