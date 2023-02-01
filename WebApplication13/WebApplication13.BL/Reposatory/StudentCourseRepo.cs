@@ -25,7 +25,7 @@ namespace WebApplication13.BL.Reposatory
 
         public void delete(int student_id,int course_id)
         {
-           var data= this.db.student_Courses.Where(a=>a.StudentId==student_id &&a.CourseId==course_id).FirstOrDefault();
+           var data= this.db.student_Courses.Where(a=>a.Std_Id==student_id &&a.Crs_Id==course_id).FirstOrDefault();
             this.db.student_Courses.Remove(data);
             db.SaveChanges();
         }
@@ -37,7 +37,7 @@ namespace WebApplication13.BL.Reposatory
 
         public IEnumerable<Student_course> GetStudent_Courses(int id)
         {
-            var data= db.student_Courses.Where(a=>a.StudentId==id);
+            var data= db.student_Courses.Where(a=>a.Std_Id==id);
            
             return data;
         }

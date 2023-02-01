@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,9 @@ namespace WebApplication13.DAL.Entities
 
 
         public IEnumerable<Student_course> Students_course { get; set; }
-        public int? TeacherId { get; set; }
+   
+
+        public int TeacherId { get; set; }
 
    
         public Teacher Teacher { get; set; }

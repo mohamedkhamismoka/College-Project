@@ -11,9 +11,9 @@ namespace WebApplication13.BL.VM
     public class StudentcourseVM
     {
         [Required(ErrorMessage = "Student is required")]
-        public int StudentId { get; set; }
+        public int Std_Id { get; set; }
         [Required(ErrorMessage = "Course is required")]
-        public int CourseId { get; set; }
+        public int Crs_Id { get; set; }
 
         public Student student { get; set; }
 

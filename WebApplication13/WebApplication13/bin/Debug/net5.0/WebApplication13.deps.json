@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "WebApplication13/1.0.0": {
         "dependencies": {
+          "AutoMapper": "11.0.1",
           "ClosedXML": "0.96.0",
           "Microsoft.EntityFrameworkCore": "5.0.14",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.14",

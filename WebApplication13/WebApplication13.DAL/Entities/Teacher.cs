@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication13.DAL.Entities
 {
@@ -32,7 +33,7 @@ namespace WebApplication13.DAL.Entities
        public string Cvname { get; set; }
 
 
-        public int? DepartmentId { get; set; }
+        public int DepartmentId { get; set; }
 
  
         public Department dept { get; set; }

@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication13.DAL.Entities
 {
     public class Student_course
     { 
-        public int? StudentId { get; set; }
 
-        public int? CourseId { get; set; }
+        public int Std_Id { get; set; }
+ 
+        public int Crs_Id { get; set; }
       
         public Student student { get; set; }
       

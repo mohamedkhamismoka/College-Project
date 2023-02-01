@@ -29,8 +29,9 @@ namespace WebApplication13.BL.VM
         [RegularExpression("^01[0-2][0-9]{8}$", ErrorMessage = "Enter valid phone")]
         public string phone { get; set; }
 
+        [Required(ErrorMessage = "CV is required")]
         public IFormFile cv { get; set; }
-
+        [Required(ErrorMessage = "Image is required")]
         public IFormFile img { get; set; }
         public string imgname { get; set; }
 
@@ -43,6 +44,8 @@ namespace WebApplication13.BL.VM
         public string mail { get; set; }
 
         public Department dept { get; set; }
+        [Required(ErrorMessage = "Department is required")]
+
         public int DepartmentId { get; set; }
     }
 }

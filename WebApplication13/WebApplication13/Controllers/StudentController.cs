@@ -55,7 +55,7 @@ namespace WebApplication13.Controllers
                     std.create(data);
                     return RedirectToAction("Index");
                 }
-              
+                ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
                 return View(student);
                 
             }

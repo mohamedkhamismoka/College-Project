@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebApplication13.DAL.Migrations
 {
-    public partial class builddb : Migration
+    public partial class MyFirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,7 +30,7 @@ namespace WebApplication13.DAL.Migrations
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     address = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DepartmentId = table.Column<int>(type: "int", nullable: true),
+                    DepartmentId = table.Column<int>(type: "int", nullable: false),
                     mail = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     imgname = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -42,7 +42,7 @@ namespace WebApplication13.DAL.Migrations
                         column: x => x.DepartmentId,
                         principalTable: "departments",
                         principalColumn: "DepartmentId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -57,7 +57,7 @@ namespace WebApplication13.DAL.Migrations
                     phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     imgname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Cvname = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DepartmentId = table.Column<int>(type: "int", nullable: true),
+                    DepartmentId = table.Column<int>(type: "int", nullable: false),
                     mail = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -68,7 +68,7 @@ namespace WebApplication13.DAL.Migrations
                         column: x => x.DepartmentId,
                         principalTable: "departments",
                         principalColumn: "DepartmentId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -77,10 +77,10 @@ namespace WebApplication13.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    status = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Academic_year = table.Column<int>(type: "int", nullable: false),
-                    StudentId = table.Column<int>(type: "int", nullable: true),
-                    Term = table.Column<int>(type: "int", nullable: false)
+                    StudentId = table.Column<int>(type: "int", nullable: false),
+                    Term = table.Column<int>(type: "int", nullable: false),
+                    money = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -90,7 +90,7 @@ namespace WebApplication13.DAL.Migrations
                         column: x => x.StudentId,
                         principalTable: "Students",
                         principalColumn: "StudentId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -101,7 +101,7 @@ namespace WebApplication13.DAL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     hours = table.Column<int>(type: "int", nullable: false),
-                    TeacherId = table.Column<int>(type: "int", nullable: true),
+                    TeacherId = table.Column<int>(type: "int", nullable: false),
                     DepartmentId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -118,34 +118,36 @@ namespace WebApplication13.DAL.Migrations
                         column: x => x.TeacherId,
                         principalTable: "Teachers",
                         principalColumn: "TeacherId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "student_Courses",
                 columns: table => new
                 {
-                    StudentId = table.Column<int>(type: "int", nullable: false),
-                    CourseId = table.Column<int>(type: "int", nullable: false),
+                    Std_Id = table.Column<int>(type: "int", nullable: false),
+                    Crs_Id = table.Column<int>(type: "int", nullable: false),
+                    StudentId = table.Column<int>(type: "int", nullable: true),
+                    CourseId = table.Column<int>(type: "int", nullable: true),
                     degree = table.Column<int>(type: "int", nullable: false),
                     Academic_year = table.Column<int>(type: "int", nullable: false),
                     Term = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_student_Courses", x => new { x.StudentId, x.CourseId });
+                    table.PrimaryKey("PK_student_Courses", x => new { x.Std_Id, x.Crs_Id });
                     table.ForeignKey(
                         name: "FK_student_Courses_Courses_CourseId",
                         column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "CourseId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_student_Courses_Students_StudentId",
                         column: x => x.StudentId,
                         principalTable: "Students",
                         principalColumn: "StudentId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -167,6 +169,11 @@ namespace WebApplication13.DAL.Migrations
                 name: "IX_student_Courses_CourseId",
                 table: "student_Courses",
                 column: "CourseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_student_Courses_StudentId",
+                table: "student_Courses",
+                column: "StudentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Students_DepartmentId",

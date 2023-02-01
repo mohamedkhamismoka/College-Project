@@ -10,7 +10,7 @@ namespace WebApplication13.DAL.Entities
 {
     public  class Student
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]  
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
 
         public int StudentId { get; set; }
@@ -23,7 +23,7 @@ namespace WebApplication13.DAL.Entities
         public IEnumerable<Student_course> Students_courses { get; set; }
         public string phone { get; set; }
 
-        public int? DepartmentId { get; set; }
+        public int DepartmentId { get; set; }
 
      
           public Department dept { get; set; }

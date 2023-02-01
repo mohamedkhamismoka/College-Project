@@ -216,6 +216,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
             "ClosedXML": {
               "target": "Package",
               "version": "[0.96.0, )"

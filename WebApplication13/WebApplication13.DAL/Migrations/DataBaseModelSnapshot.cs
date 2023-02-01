@@ -32,7 +32,7 @@ namespace WebApplication13.DAL.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TeacherId")
+                    b.Property<int>("TeacherId")
                         .HasColumnType("int");
 
                     b.Property<int>("hours")
@@ -72,7 +72,7 @@ namespace WebApplication13.DAL.Migrations
                     b.Property<int>("Academic_year")
                         .HasColumnType("int");
 
-                    b.Property<int?>("StudentId")
+                    b.Property<int>("StudentId")
                         .HasColumnType("int");
 
                     b.Property<int>("Term")
@@ -98,7 +98,7 @@ namespace WebApplication13.DAL.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("DepartmentId")
+                    b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -125,13 +125,19 @@ namespace WebApplication13.DAL.Migrations
 
             modelBuilder.Entity("WebApplication13.DAL.Entities.Student_course", b =>
                 {
-                    b.Property<int?>("StudentId")
+                    b.Property<int>("Std_Id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Crs_Id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Academic_year")
                         .HasColumnType("int");
 
                     b.Property<int?>("CourseId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Academic_year")
+                    b.Property<int?>("StudentId")
                         .HasColumnType("int");
 
                     b.Property<int>("Term")
@@ -140,9 +146,11 @@ namespace WebApplication13.DAL.Migrations
                     b.Property<int>("degree")
                         .HasColumnType("int");
 
-                    b.HasKey("StudentId", "CourseId");
+                    b.HasKey("Std_Id", "Crs_Id");
 
                     b.HasIndex("CourseId");
+
+                    b.HasIndex("StudentId");
 
                     b.ToTable("student_Courses");
                 });
@@ -160,7 +168,7 @@ namespace WebApplication13.DAL.Migrations
                     b.Property<string>("Cvname")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("DepartmentId")
+                    b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -193,7 +201,9 @@ namespace WebApplication13.DAL.Migrations
 
                     b.HasOne("WebApplication13.DAL.Entities.Teacher", "Teacher")
                         .WithMany("courses")
-                        .HasForeignKey("TeacherId");
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Teacher");
                 });
@@ -202,7 +212,9 @@ namespace WebApplication13.DAL.Migrations
                 {
                     b.HasOne("WebApplication13.DAL.Entities.Student", "student")
                         .WithMany("payments")
-                        .HasForeignKey("StudentId");
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("student");
                 });
@@ -211,7 +223,9 @@ namespace WebApplication13.DAL.Migrations
                 {
                     b.HasOne("WebApplication13.DAL.Entities.Department", "dept")
                         .WithMany("Students")
-                        .HasForeignKey("DepartmentId");
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("dept");
                 });
@@ -220,15 +234,11 @@ namespace WebApplication13.DAL.Migrations
                 {
                     b.HasOne("WebApplication13.DAL.Entities.Course", "course")
                         .WithMany("Students_course")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CourseId");
 
                     b.HasOne("WebApplication13.DAL.Entities.Student", "student")
                         .WithMany("Students_courses")
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("StudentId");
 
                     b.Navigation("course");
 
@@ -239,7 +249,9 @@ namespace WebApplication13.DAL.Migrations
                 {
                     b.HasOne("WebApplication13.DAL.Entities.Department", "dept")
                         .WithMany("Teachers")
-                        .HasForeignKey("DepartmentId");
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("dept");
                 });

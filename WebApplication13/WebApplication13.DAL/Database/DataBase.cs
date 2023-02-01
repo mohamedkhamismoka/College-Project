@@ -19,8 +19,12 @@ namespace WebApplication13.DAL.Database
        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Student_course>().HasKey(a => new {a.StudentId,a.CourseId});
-         
+            modelBuilder.Entity<Student_course>().HasKey(a => new {a.Std_Id,a.Crs_Id});
+
+
+
+
+
 
         }
 

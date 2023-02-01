@@ -37,7 +37,7 @@ namespace WebApplication13.BL
         [DataType(DataType.EmailAddress,ErrorMessage ="Please Enter valid mail")]
         [Required(ErrorMessage = "Email is required")]
         public string mail { get; set; }
-      
+        [Required(ErrorMessage = "image is required")]
         public IFormFile img { get; set; }
         public string imgname { get; set; }
 
