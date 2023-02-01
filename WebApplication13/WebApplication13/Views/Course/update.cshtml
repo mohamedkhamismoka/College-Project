@@ -36,8 +36,8 @@
    <div class="form-group">
         <label asp-for="TeacherId"> Choose Course Lecturer:</label><br />
        <select asp-for="TeacherId" asp-items="(SelectList)ViewBag.teachers" class="form-control" style="background-color: white;color: black;">
-       <option >
-           Select Teacher
+     <option value="0" selected >
+           Select Lecturer
        </option>
 
        </select>

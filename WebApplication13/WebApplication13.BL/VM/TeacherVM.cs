@@ -11,6 +11,9 @@ namespace WebApplication13.BL.VM
 {
     public class TeacherVM
     {
+
+
+
         public int TeacherId { get; set; }
         [Required(ErrorMessage ="Teacher Name Is Required")]
         [MinLength(3,ErrorMessage ="Min Length Is 3")]
@@ -20,8 +23,7 @@ namespace WebApplication13.BL.VM
         [Required(ErrorMessage = "Teacher BirthDate Is Required")]
         [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
-
-        public Course Course { get; set; }
+        public IEnumerable<Course> courses { get; set; }
 
         public string address { get; set; }
 
@@ -46,6 +48,7 @@ namespace WebApplication13.BL.VM
         public Department dept { get; set; }
         [Required(ErrorMessage = "Department is required")]
 
+        [Range(1,long.MaxValue,ErrorMessage ="please select valid Department")]
         public int DepartmentId { get; set; }
     }
 }

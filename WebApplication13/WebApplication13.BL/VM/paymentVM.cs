@@ -16,7 +16,7 @@ namespace WebApplication13.BL.VM
         [Required(ErrorMessage = "Academic Year Is Required")]
         [Range(1,4,ErrorMessage ="Academic year must be from 1 to 4")]
         public int Academic_year { get; set; }
-        [Required(ErrorMessage = "student Is Required")]
+        [Range(1, long.MaxValue, ErrorMessage = "please select valid student")]
         public int StudentId { get; set; }
       
         public Student student { get; set; }

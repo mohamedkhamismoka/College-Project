@@ -42,7 +42,8 @@ namespace WebApplication13.BL
         public string imgname { get; set; }
 
         public Department dept { get; set; }
-        [Required(ErrorMessage = "Department is required")]
+
+        [Range(1, long.MaxValue, ErrorMessage = "please select valid Department")]
         public int DepartmentId { get; set; }
     }
 }

@@ -17,8 +17,8 @@
     <div class="form-group">
         <label asp-for="StudentId"> Choose Student ID:</label><br />
        <select asp-for="StudentId" asp-items="(SelectList)ViewBag.students" class="form-control" style="background-color: white;color: black;">
-       <option >
-           Select Student ID
+         <option value="0" selected >
+           Select student
        </option>
 
        </select>

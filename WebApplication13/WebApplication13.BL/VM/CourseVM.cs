@@ -22,7 +22,7 @@ namespace WebApplication13.BL.VM
 
 
         public IEnumerable<Student_course> Students_course { get; set; }
-        [Required(ErrorMessage = "Course Lecturer Is Required")]
+        [Range(1, long.MaxValue, ErrorMessage = "please select valid Course Lecturer")]
         public int TeacherId { get; set; }
 
      

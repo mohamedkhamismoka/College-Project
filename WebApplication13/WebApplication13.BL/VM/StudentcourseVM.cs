@@ -10,9 +10,11 @@ namespace WebApplication13.BL.VM
 {
     public class StudentcourseVM
     {
-        [Required(ErrorMessage = "Student is required")]
+
+        [Range(1, long.MaxValue, ErrorMessage = "please select valid Student")]
         public int Std_Id { get; set; }
         [Required(ErrorMessage = "Course is required")]
+        [Range(1, long.MaxValue, ErrorMessage = "please select valid Course")]
         public int Crs_Id { get; set; }
 
         public Student student { get; set; }

@@ -50,7 +50,9 @@
              <div class="form-group">
         <label asp-for="DepartmentId" style="float:left"> Student Department:</label><br />
        <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.departments" class="form-control" style="background-color: white;color: black;" disabled>
-
+            <option value="0" selected >
+           Select Department
+       </option>
 
        </select>
        
@@ -61,7 +63,9 @@
     <div class="form-group">
            <label style="float:left" > select Course:</label><br />
        <select  id="course"  asp-items="(SelectList)ViewBag.courses" class="form-control" style="background-color: white;color: black;" >
-           <option>Select course</option>
+           <option value="0" selected >
+           Select Course
+       </option>
 
        </select>
        
