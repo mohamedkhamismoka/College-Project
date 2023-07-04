@@ -131,7 +131,7 @@ namespace WebApplication13.Controllers
             var data = std.Getbyid(id);
             var res = mapper.Map<StudentVM>(data);
             res.imgname = data.imgname;
-
+            ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name", data.DepartmentId);
             return View(res);
         }
 

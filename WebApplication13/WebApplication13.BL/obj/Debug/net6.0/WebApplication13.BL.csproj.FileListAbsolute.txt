@@ -1,0 +1,15 @@
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\bin\Debug\net6.0\WebApplication13.BL.deps.json
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\bin\Debug\net6.0\WebApplication13.BL.dll
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\bin\Debug\net6.0\ref\WebApplication13.BL.dll
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\bin\Debug\net6.0\WebApplication13.BL.pdb
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\bin\Debug\net6.0\WebApplication13.DAL.dll
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\bin\Debug\net6.0\WebApplication13.DAL.pdb
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\WebApplication13.BL.csproj.AssemblyReference.cache
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\WebApplication13.BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\WebApplication13.BL.AssemblyInfoInputs.cache
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\WebApplication13.BL.AssemblyInfo.cs
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\WebApplication13.BL.csproj.CoreCompileInputs.cache
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\WebApplication13.BL.csproj.CopyComplete
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\WebApplication13.BL.dll
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\ref\WebApplication13.BL.dll
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\WebApplication13.BL.pdb
