@@ -17,16 +17,16 @@ namespace WebApplication13.BL.services
 {
     public class sender : Mailsender
     {
-        public async Task sendmail(string mailfrom, string body)
+        public async Task sendmail(string recieveremail, string body)
         {
             var email = new MimeMessage()
             {
                 Sender = MailboxAddress.Parse("atiffahmykhamis@gmail.com"),
-                Subject = "message from College system from "+ mailfrom
+                Subject = "message from College system"
 
 
             };
-            email.To.Add(MailboxAddress.Parse("mostafaatif824@gmail.com"));
+            email.To.Add(MailboxAddress.Parse(recieveremail));
             var builder = new BodyBuilder();
 
 

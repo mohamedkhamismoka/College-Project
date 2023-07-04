@@ -20,12 +20,12 @@ namespace WebApplication13.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Send(string sendermail, string message)
+        public async Task<IActionResult> Send(string recieveremail, string message)
         {
             try
             {
               
-              await  mailer.sendmail(sendermail, message);
+              await  mailer.sendmail(recieveremail, message);
 
                 return RedirectToAction("Index","Home");
 
