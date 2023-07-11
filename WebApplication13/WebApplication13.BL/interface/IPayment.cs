@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using WebApplication13.DAL.Entities;
 
 namespace WebApplication13.BL
-{
+;
     public interface IPayment
 {
         public void create(Payment pay);
@@ -25,4 +25,4 @@ namespace WebApplication13.BL
     }
 
 
-}
+

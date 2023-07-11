@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace WebApplication13.BL.VM
-{
+;
     public class FirstVM
     {
         public int studentid { get; set; }  
@@ -14,4 +14,4 @@ namespace WebApplication13.BL.VM
 
         public int sum { get; set; }
     }
-}
+

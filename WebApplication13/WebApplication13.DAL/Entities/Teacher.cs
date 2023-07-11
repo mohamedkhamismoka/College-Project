@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication13.DAL.Entities
-{
+;
     public class Teacher
     {
 
@@ -21,7 +21,7 @@ namespace WebApplication13.DAL.Entities
       
         public DateTime BirthDate { get; set; }
 
-        public IEnumerable<Course> courses { get; set; }
+        public virtual IEnumerable<Course> courses { get; set; }
 
         public string address { get; set; }
 
@@ -36,8 +36,8 @@ namespace WebApplication13.DAL.Entities
         public int DepartmentId { get; set; }
 
  
-        public Department dept { get; set; }
+        public virtual Department dept { get; set; }
 
         public string mail { get; set; }
     }
-}
+

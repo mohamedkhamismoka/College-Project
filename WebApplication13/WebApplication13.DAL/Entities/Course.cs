@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace WebApplication13.DAL.Entities
-{
+;
     public class Course
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -18,13 +18,13 @@ namespace WebApplication13.DAL.Entities
         public int hours { get; set; }
 
 
-        public IEnumerable<Student_course> Students_course { get; set; }
+        public virtual IEnumerable<Student_course> Students_course { get; set; }
    
 
-        public int TeacherId { get; set; }
+        public int? TeacherId { get; set; }
 
    
         public Teacher Teacher { get; set; }
 
     }
-}
+

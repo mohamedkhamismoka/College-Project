@@ -5,8 +5,8 @@ using WebApplication13.BL;
 using WebApplication13.BL.VM;
 using WebApplication13.DAL.Entities;
 
-namespace WebApplication13.Controllers
-{
+namespace WebApplication13.Controllers;
+
     public class StudentCourseController : Controller
     {
         private readonly IMapper mapper;
@@ -100,4 +100,4 @@ namespace WebApplication13.Controllers
             }
         }
     }
-}
+

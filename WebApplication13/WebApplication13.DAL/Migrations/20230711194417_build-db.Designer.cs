@@ -7,26 +7,30 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication13.DAL.Database;
 
+#nullable disable
+
 namespace WebApplication13.DAL.Migrations
 {
     [DbContext(typeof(DataBase))]
-    [Migration("20230201125339_MyFirstMigration")]
-    partial class MyFirstMigration
+    [Migration("20230711194417_build-db")]
+    partial class builddb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.14")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "6.0.15")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
             modelBuilder.Entity("WebApplication13.DAL.Entities.Course", b =>
                 {
                     b.Property<int>("CourseId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseId"), 1L, 1);
 
                     b.Property<int?>("DepartmentId")
                         .HasColumnType("int");
@@ -34,7 +38,7 @@ namespace WebApplication13.DAL.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TeacherId")
+                    b.Property<int?>("TeacherId")
                         .HasColumnType("int");
 
                     b.Property<int>("hours")
@@ -53,8 +57,9 @@ namespace WebApplication13.DAL.Migrations
                 {
                     b.Property<int>("DepartmentId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentId"), 1L, 1);
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -68,8 +73,9 @@ namespace WebApplication13.DAL.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("Academic_year")
                         .HasColumnType("int");
@@ -94,13 +100,14 @@ namespace WebApplication13.DAL.Migrations
                 {
                     b.Property<int>("StudentId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentId"), 1L, 1);
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DepartmentId")
+                    b.Property<int?>("DepartmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -136,12 +143,6 @@ namespace WebApplication13.DAL.Migrations
                     b.Property<int>("Academic_year")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CourseId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("StudentId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Term")
                         .HasColumnType("int");
 
@@ -150,9 +151,7 @@ namespace WebApplication13.DAL.Migrations
 
                     b.HasKey("Std_Id", "Crs_Id");
 
-                    b.HasIndex("CourseId");
-
-                    b.HasIndex("StudentId");
+                    b.HasIndex("Crs_Id");
 
                     b.ToTable("student_Courses");
                 });
@@ -161,8 +160,9 @@ namespace WebApplication13.DAL.Migrations
                 {
                     b.Property<int>("TeacherId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TeacherId"), 1L, 1);
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
@@ -203,9 +203,7 @@ namespace WebApplication13.DAL.Migrations
 
                     b.HasOne("WebApplication13.DAL.Entities.Teacher", "Teacher")
                         .WithMany("courses")
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TeacherId");
 
                     b.Navigation("Teacher");
                 });
@@ -226,8 +224,7 @@ namespace WebApplication13.DAL.Migrations
                     b.HasOne("WebApplication13.DAL.Entities.Department", "dept")
                         .WithMany("Students")
                         .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("dept");
                 });
@@ -236,11 +233,15 @@ namespace WebApplication13.DAL.Migrations
                 {
                     b.HasOne("WebApplication13.DAL.Entities.Course", "course")
                         .WithMany("Students_course")
-                        .HasForeignKey("CourseId");
+                        .HasForeignKey("Crs_Id")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("WebApplication13.DAL.Entities.Student", "student")
                         .WithMany("Students_courses")
-                        .HasForeignKey("StudentId");
+                        .HasForeignKey("Std_Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("course");
 
@@ -274,9 +275,9 @@ namespace WebApplication13.DAL.Migrations
 
             modelBuilder.Entity("WebApplication13.DAL.Entities.Student", b =>
                 {
-                    b.Navigation("payments");
-
                     b.Navigation("Students_courses");
+
+                    b.Navigation("payments");
                 });
 
             modelBuilder.Entity("WebApplication13.DAL.Entities.Teacher", b =>

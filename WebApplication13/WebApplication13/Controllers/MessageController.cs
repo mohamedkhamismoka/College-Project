@@ -5,8 +5,8 @@ using System.Net.Mail;
 using System.Threading.Tasks;
 using WebApplication13.BL;
 
-namespace WebApplication13.Controllers
-{
+namespace WebApplication13.Controllers;
+
     public class MessageController : Controller
     {
         private readonly Mailsender mailer;
@@ -39,4 +39,4 @@ namespace WebApplication13.Controllers
         }
 
     }
-}
+

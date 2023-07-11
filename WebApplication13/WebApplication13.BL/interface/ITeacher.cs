@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using WebApplication13.DAL.Entities;
 
-namespace WebApplication13.BL
-{
+namespace WebApplication13.BL;
+
     public interface ITeacher
 {
 
@@ -24,4 +24,4 @@ namespace WebApplication13.BL
 
         public int getcount();
     }
-}
+

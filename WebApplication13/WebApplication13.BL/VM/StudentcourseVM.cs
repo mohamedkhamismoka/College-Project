@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using WebApplication13.DAL.Entities;
 
 namespace WebApplication13.BL.VM
-{
+;
     public class StudentcourseVM
     {
 
@@ -33,4 +33,4 @@ namespace WebApplication13.BL.VM
         [Required(ErrorMessage = "Term is required"), Range(1, 2, ErrorMessage = "Term must be between 1 and 2")]
         public int Term { get; set; }
     }
-}
+

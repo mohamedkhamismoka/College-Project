@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using WebApplication13.DAL.Entities;
 
-namespace WebApplication13.BL
-{
+namespace WebApplication13.BL;
+
     public interface IDepartment
 {
 
@@ -22,4 +22,4 @@ namespace WebApplication13.BL
         public IEnumerable<Department> filter(Func<Department, bool> filter = null);
         public int getcount();
     }
-}
+

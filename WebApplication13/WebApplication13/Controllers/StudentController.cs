@@ -9,146 +9,175 @@ using WebApplication13.DAL.Entities;
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.IO;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace WebApplication13.Controllers
+namespace WebApplication13.Controllers;
+
+public class StudentController : Controller
 {
-    public class StudentController : Controller
+    private readonly IStudent std;
+    private readonly IMapper mapper;
+    private readonly IDepartment dept;
+    private readonly IstudentCourse stdCrs;
+
+    public StudentController(IStudent std, IMapper mapper, IDepartment dept, IstudentCourse stdCrs)
     {
-        private readonly IStudent std;
-        private readonly IMapper mapper;
-        private readonly IDepartment dept;
+        this.std = std;
+        this.mapper = mapper;
+        this.dept = dept;
+        this.stdCrs = stdCrs;
+    }
 
-        public StudentController(IStudent std,IMapper mapper, IDepartment dept)
+    public IActionResult Index()
+    {
+        var data = std.GetAll();
+        var res = mapper.Map<IEnumerable<StudentVM>>(data);
+
+
+        return View(res);
+    }
+
+    public IActionResult Create()
+    {
+        ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Create(StudentVM student)
+    {
+
+        try
         {
-            this.std = std;
-            this.mapper = mapper;
-            this.dept = dept;
-        }
+            if (ModelState.IsValid)
+            {
+                string imgname = fileUploader.upload("images", student.img);
 
-        public IActionResult Index()
-        {
-            var data = std.GetAll();
-            var res = mapper.Map<IEnumerable<StudentVM>>(data);
-   
+                var data = mapper.Map<Student>(student);
+                data.imgname = imgname;
 
-            return View(res);
+                std.create(data);
+                return RedirectToAction("Index");
+            }
+            ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
+            return View(student);
+
         }
-       
-        public IActionResult Create()
+        catch (Exception e)
         {
             ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
-            return View();  
+            return View(student);
         }
 
-        [HttpPost]
-        public IActionResult Create(StudentVM student)
+    }
+
+
+
+    public IActionResult Details(int id)
+    {
+        var data = std.Getbyid(id);
+        var res = mapper.Map<StudentVM>(data);
+        ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name", data.DepartmentId);
+
+
+        return View(res);
+    }
+
+    public IActionResult update(int id)
+    {
+        var data = std.Getbyid(id);
+        var res = mapper.Map<StudentVM>(data);
+        res.imgname = data.imgname;
+        ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name", data.DepartmentId);
+        return View(res);
+    }
+    [HttpPost]
+    public IActionResult update(StudentVM student, IFormFile newimg, string oldimg)
+    {
+        try
         {
-            try
+            if (newimg == null)
             {
-                if (ModelState.IsValid)
+                student.imgname = oldimg;
+            }
+            else
+            {
+                fileUploader.delete(oldimg, "images");
+                student.imgname = fileUploader.upload("images", newimg);
+            }
+
+
+            if (!ModelState.IsValid)
+            {
+
+                if (student.img == null && ModelState.Root.Children[0].ValidationState== ModelValidationState.Invalid)
                 {
-                   string imgname= fileUploader.upload("images", student.img);
-                  
-                   var data= mapper.Map<Student>(student); 
-                    data.imgname = imgname;
-                  
-                    std.create(data);
+                    var updated_student = mapper.Map<Student>(student);
+
+                    std.update(updated_student);
                     return RedirectToAction("Index");
                 }
-                ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
-                return View(student);
-                
-            }
-            catch(Exception e)
-            {
-                ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
-                return View(student);
-            }
-          
-        }
-
-
-
-        public IActionResult Details( int id)
-        {
-            var data = std.Getbyid(id);
-            var res = mapper.Map<StudentVM>(data);
-            ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name",data.DepartmentId);
-
-
-            return View(res);
-        }
-
-        public IActionResult update(int id)
-        {
-            var data = std.Getbyid(id);
-            var res = mapper.Map<StudentVM>(data);
-            res.imgname = data.imgname;
-            ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name", data.DepartmentId);
-            return View(res);
-        }
-        [HttpPost]
-        public IActionResult update(StudentVM student,string oldimg)
-        {
-            try
-            {
-
-                if (ModelState.IsValid)
+                else
                 {
-                    if (student.img == null)
-                    {
-                        student.imgname = oldimg;
-                        var updated_student = mapper.Map<Student>(student);
+                    student.imgname = oldimg;
+                    ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
+                    return View(student);
 
-                        std.update(updated_student);
-                        return RedirectToAction("Index");
-                    }
-                    else
-                    {
-                        string imgname = fileUploader.upload("images", student.img);
-                        fileUploader.delete(student.imgname, "images");
-                        var updated_student = mapper.Map<Student>(student);
-                        updated_student.imgname = imgname;  
-                        std.update(updated_student);
-                        return RedirectToAction("Index");
-                    }
                 }
-                student.imgname = oldimg;
-                ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
-                return View(student);
+
+
+
+
+
+
+
             }
-            catch(Exception e)
-            {
-                ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
-                return View(student);
-            }
-        }
+            else {
 
+                var updated_student = mapper.Map<Student>(student);
 
-
-        public IActionResult Delete(int id)
-        {
-            var data = std.Getbyid(id);
-            var res = mapper.Map<StudentVM>(data);
-            res.imgname = data.imgname;
-            ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name", data.DepartmentId);
-            return View(res);
-        }
-
-        [HttpPost]
-        [ActionName("Delete")]
-        public IActionResult conDelete(int id)
-        {
-            try
-            {   var data=std.Getbyid(id);
-                fileUploader.delete(data.imgname, "images");
-                std.delete(id);
+                std.update(updated_student);
                 return RedirectToAction("Index");
-
-            }catch(Exception e)
-            {
-                return View(id);
             }
+
+        }
+        catch (Exception e)
+        {
+            ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
+            return View(student);
+        }
+    }
+
+
+
+    public IActionResult Delete(int id)
+    {
+        var data = std.Getbyid(id);
+        var res = mapper.Map<StudentVM>(data);
+        res.imgname = data.imgname;
+        ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name", data.DepartmentId);
+        return View(res);
+    }
+
+    [HttpPost]
+    [ActionName("Delete")]
+    public IActionResult conDelete(int id)
+    {
+        var data = std.Getbyid(id);
+        try
+        {
+            stdCrs.deleteAllForstudent(id);
+            std.delete(id);
+            fileUploader.delete(data.imgname, "images");
+            return RedirectToAction("Index");
+
+        }
+        catch (Exception e)
+        {
+            var res = mapper.Map<StudentVM>(data);
+            return View(res);
         }
     }
 }
+

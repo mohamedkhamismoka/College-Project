@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication13.DAL.Entities
-{
+;
     public class Department
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -15,8 +15,8 @@ namespace WebApplication13.DAL.Entities
         public string Name { get; set; }
 
 
-        public IEnumerable<Student> Students { get; set; }
-        public IEnumerable<Course> Courses { get; set; }
-        public IEnumerable<Teacher> Teachers { get; set; }
-    }
+    public virtual IEnumerable<Student> Students { get; set; }
+    public virtual IEnumerable<Course> Courses { get; set; }
+    public virtual IEnumerable<Teacher> Teachers { get; set; }
 }
+

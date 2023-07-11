@@ -8,7 +8,7 @@ using WebApplication13.DAL.Database;
 using WebApplication13.DAL.Entities;
 
 namespace WebApplication13.BL.Reposatory
-{
+;
     public class StudentCourseRepo : IstudentCourse
     {
         private readonly DataBase db;
@@ -30,7 +30,20 @@ namespace WebApplication13.BL.Reposatory
             db.SaveChanges();
         }
 
-        public IEnumerable<Student_course> getAll()
+    public void deleteAllForstudent(int student_id)
+    {
+        var data = this.db.student_Courses.Where(a => a.Std_Id == student_id);
+        this.db.student_Courses.RemoveRange(data);
+        db.SaveChanges();
+    }
+
+    public void deleteAllForCourse( int course_id)
+    {
+        var data = this.db.student_Courses.Where(a =>  a.Crs_Id == course_id);
+        this.db.student_Courses.RemoveRange(data);
+        db.SaveChanges();
+    }
+    public IEnumerable<Student_course> getAll()
         {
             return db.student_Courses.Select(a => a);
         }
@@ -48,4 +61,4 @@ namespace WebApplication13.BL.Reposatory
             db.SaveChanges();
         }
     }
-}
+

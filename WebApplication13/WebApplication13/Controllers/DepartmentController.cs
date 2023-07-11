@@ -6,8 +6,8 @@ using WebApplication13.BL;
 using WebApplication13.BL.VM;
 using WebApplication13.DAL.Entities;
 
-namespace WebApplication13.Controllers
-{
+namespace WebApplication13.Controllers;
+
     public class DepartmentController : Controller
     {
 
@@ -108,10 +108,12 @@ namespace WebApplication13.Controllers
             }
             catch (Exception e)
             {
-                return View();
+            var data = department.Getbyid(id);
+            var res = mapper.Map<DepartmentVM>(data);
+            return View(res);
             }
 
 
         }
     }
-}
+

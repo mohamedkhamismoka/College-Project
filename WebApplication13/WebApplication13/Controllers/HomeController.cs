@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using WebApplication13.Models;
 
 
-namespace WebApplication13.Controllers
-{
+namespace WebApplication13.Controllers;
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -40,4 +40,4 @@ namespace WebApplication13.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
-}
+

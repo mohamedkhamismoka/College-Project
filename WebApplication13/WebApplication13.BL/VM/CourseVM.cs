@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using WebApplication13.DAL.Entities;
 
 namespace WebApplication13.BL.VM
-{
+;
     public class CourseVM
     {
         public int CourseId { get; set; }
@@ -28,4 +28,4 @@ namespace WebApplication13.BL.VM
      
         public Teacher Teacher { get; set; }
     }
-}
+

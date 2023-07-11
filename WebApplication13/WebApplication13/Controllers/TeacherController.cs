@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -9,8 +11,8 @@ using WebApplication13.BL.services;
 using WebApplication13.BL.VM;
 using WebApplication13.DAL.Entities;
 
-namespace WebApplication13.Controllers
-{
+namespace WebApplication13.Controllers;
+
     public class TeacherController : Controller
     {
         private readonly ITeacher teacher;
@@ -68,57 +70,90 @@ namespace WebApplication13.Controllers
             return View(res);
         }
         [HttpPost]
-        public IActionResult update(TeacherVM tech,string oldimg,string oldcv)
+        public IActionResult update(TeacherVM tech,string oldimg,string oldcv,IFormFile newimg,IFormFile newcv)
         {
-            string newimg = "";
-            string newcv = "";
-            try
-            { 
-                if (ModelState.IsValid)
+        try
+        {
+            if (newimg == null)
+            {
+                tech.imgname = oldimg;
+            }
+            else
+            {
+                var newimgname = fileUploader.upload("images", newimg);
+                fileUploader.delete("images", oldimg);
+                tech.imgname = newimgname;
+            }
+            if (newcv == null)
+            {
+                tech.Cvname = oldcv;
+            }
+            else
+            {
+                var newcvname = fileUploader.upload("files", newcv);
+                fileUploader.delete("files", oldcv);
+                tech.Cvname = newcvname;
+            }
+
+            if (!ModelState.IsValid)
+            {
+                int j = 0;
+                int y = 0;
+                for (int i = 0; i < ModelState.Root.Children.Count; i++)
                 {
-                    if (tech.img == null)
+                    if ((ModelState.Root.Children[i].ValidationState == ModelValidationState.Invalid && i == 0) || (ModelState.Root.Children[i].ValidationState == ModelValidationState.Invalid && i == 1))
                     {
-                        tech.imgname= oldimg;
+                        j++;
                     }
                     else
                     {
-                      newimg=fileUploader.upload("images", tech.img);
-                     fileUploader.delete("images",oldimg);
-                        tech.imgname= newimg;
+                        if (ModelState.Root.Children[i].ValidationState == ModelValidationState.Invalid)
+                        {
+                            y++;
+                        }
                     }
 
+                }
 
-
-
-                    if (tech.cv == null)
-                    {
-                        tech.Cvname = oldcv;
-                    }
-                    else
-                    {
-                        newcv = fileUploader.upload("images", tech.img);
-                        fileUploader.delete("files", oldcv);
-                        tech.Cvname= newcv; 
-                    }
-
-
+                if (y == 0 && j >= 0)
+                {
                     var data = mapper.Map<Teacher>(tech);
+
+
+
                     teacher.update(data);
                     return RedirectToAction("Index");
                 }
-                tech.imgname= oldimg;
-                tech.Cvname = oldcv;
-                ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
-                return View(tech);
+                else
+                {
+                    ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
+                    return View(tech);
+                }
+
+
+
+
 
             }
-            catch (Exception e)
+            else
             {
-                ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
-                tech.imgname = oldimg;
-                tech.Cvname = oldcv;
-                return View(tech);
+                var data = mapper.Map<Teacher>(tech);
+
+
+
+                teacher.update(data);
+                return RedirectToAction("Index");
             }
+
+        }
+
+        catch (Exception e)
+        {
+            ViewBag.departments = new SelectList(dept.GetAll(), "DepartmentId", "Name");
+            tech.imgname = oldimg;
+            tech.Cvname = oldcv;
+            return View(tech);
+        }
         }
 
 
@@ -179,5 +214,5 @@ namespace WebApplication13.Controllers
 
            
         }
-    }
-}
+   }
+

@@ -8,7 +8,7 @@ using System.IO;
 using Microsoft.AspNetCore;
 
 namespace WebApplication13.BL.services
-{
+;
     public class fileUploader
     {
         
@@ -33,4 +33,4 @@ namespace WebApplication13.BL.services
 
         }
     }
-}
+

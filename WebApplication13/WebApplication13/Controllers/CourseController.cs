@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using WebApplication13.DAL.Entities;
 
-namespace WebApplication13.Controllers
-{
+namespace WebApplication13.Controllers;
+
     public class CourseController : Controller
     {
         private readonly ICourse crs;
@@ -126,4 +126,4 @@ namespace WebApplication13.Controllers
 
         }
     }
-}
+

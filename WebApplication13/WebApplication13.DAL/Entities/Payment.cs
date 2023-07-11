@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication13.DAL.Entities
-{
+;
     public class Payment
     {[DatabaseGenerated(DatabaseGeneratedOption.Identity)]  
         public int Id { get; set; }
@@ -18,7 +18,7 @@ namespace WebApplication13.DAL.Entities
  
         public int StudentId { get; set; }
    
-        public Student student { get; set; }    
+        public virtual Student student { get; set; }    
         public int Term { get; set; }
 
         public int money { get; set; }
@@ -26,4 +26,4 @@ namespace WebApplication13.DAL.Entities
 
 
     }
-}
+

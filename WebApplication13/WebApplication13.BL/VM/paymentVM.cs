@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using WebApplication13.DAL.Entities;
 
 namespace WebApplication13.BL.VM
-{
+;
     public  class paymentVM
     {
         public int Id { get; set; }
@@ -28,4 +28,4 @@ namespace WebApplication13.BL.VM
         [Range(1000,20000, ErrorMessage = "Payed Money range from 1K to 20K")]
         public int money { get; set; }
     }
-}
+

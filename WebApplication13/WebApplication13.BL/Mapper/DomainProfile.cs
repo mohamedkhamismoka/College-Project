@@ -8,7 +8,7 @@ using WebApplication13.BL.VM;
 using WebApplication13.DAL.Entities;
 
 namespace WebApplication13.BL.Mapper
-{
+;
     public class DomainProfile :Profile
     {
         public DomainProfile()
@@ -27,4 +27,4 @@ namespace WebApplication13.BL.Mapper
             CreateMap<Student_course, StudentcourseVM>();
         }
     }
-}
+

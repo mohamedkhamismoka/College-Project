@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using WebApplication13.DAL.Entities;
 
 namespace WebApplication13.BL
-{
+;
     public class StudentVM
-    {
+    { 
 
         public int StudentId { get; set; }
         [Required(ErrorMessage ="Name is required")]
@@ -37,8 +37,8 @@ namespace WebApplication13.BL
         [DataType(DataType.EmailAddress,ErrorMessage ="Please Enter valid mail")]
         [Required(ErrorMessage = "Email is required")]
         public string mail { get; set; }
-        [Required(ErrorMessage = "image is required")]
-        public IFormFile img { get; set; }
+    [Required(ErrorMessage = "image is required")]
+    public IFormFile img { get; set; }
         public string imgname { get; set; }
 
         public Department dept { get; set; }
@@ -46,4 +46,4 @@ namespace WebApplication13.BL
         [Range(1, long.MaxValue, ErrorMessage = "please select valid Department")]
         public int DepartmentId { get; set; }
     }
-}
+

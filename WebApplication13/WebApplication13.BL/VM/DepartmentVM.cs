@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using WebApplication13.DAL.Entities;
 
 namespace WebApplication13.BL.VM
-{
+;
     public class DepartmentVM
     {
         public int DepartmentId { get; set; }
@@ -21,4 +21,4 @@ namespace WebApplication13.BL.VM
         public IEnumerable<Course> Courses { get; set; }
         public IEnumerable<Teacher> Teachers { get; set; }
     }
-}
+

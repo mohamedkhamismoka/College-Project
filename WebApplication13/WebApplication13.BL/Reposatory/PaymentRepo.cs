@@ -8,7 +8,7 @@ using WebApplication13.DAL.Database;
 using WebApplication13.DAL.Entities;
 
 namespace WebApplication13.BL.Reposatory
-{
+;
     public class PaymentRepo : IPayment
     {
         private readonly DataBase db;
@@ -54,4 +54,4 @@ namespace WebApplication13.BL.Reposatory
             db.SaveChanges();
         }
     }
-}
+
