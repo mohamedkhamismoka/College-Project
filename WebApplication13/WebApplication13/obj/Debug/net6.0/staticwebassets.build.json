@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "N869IyzPgbg8iY2MJ+0utOtJuL5YVYYGyc7WzdD9Rj8=",
+  "Hash": "lNYib874U1z9yBI+LHFvZP4wjPEAEt0moGHycOtTN54=",
   "Source": "WebApplication13",
   "BasePath": "_content/WebApplication13",
   "Mode": "Default",
@@ -25942,6 +25942,23 @@
       "OriginalItemSpec": "wwwroot\\files\\c8b67afc-88e8-4160-960c-ef3a74f9dbe4C#.pdf"
     },
     {
+      "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\files\\cd31ae0a-0ed8-4e74-bb75-98d210ee1186cert.txt",
+      "SourceId": "WebApplication13",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\",
+      "BasePath": "_content/WebApplication13",
+      "RelativePath": "files/cd31ae0a-0ed8-4e74-bb75-98d210ee1186cert.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\cd31ae0a-0ed8-4e74-bb75-98d210ee1186cert.txt"
+    },
+    {
       "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\files\\cd91fcd9-2d11-464c-8455-b57ece3968ffmo.txt",
       "SourceId": "WebApplication13",
       "SourceType": "Discovered",
@@ -26518,6 +26535,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\det.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\images\\e375fff6-ca10-47e5-a293-3cd736787940Capture1 - Copy.PNG",
+      "SourceId": "WebApplication13",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\",
+      "BasePath": "_content/WebApplication13",
+      "RelativePath": "images/e375fff6-ca10-47e5-a293-3cd736787940Capture1 - Copy.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\e375fff6-ca10-47e5-a293-3cd736787940Capture1 - Copy.PNG"
     },
     {
       "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\images\\ee008fb5-5481-48df-880a-5682f7980c61messi.PNG",

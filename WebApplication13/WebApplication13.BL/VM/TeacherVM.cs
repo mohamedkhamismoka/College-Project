@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebApplication13.DAL.Entities;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Http;
-
+﻿
 namespace WebApplication13.BL.VM
 ;
     public class TeacherVM

@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Net;
-using System.Net.Mail;
-using System.Threading.Tasks;
-using WebApplication13.BL;
+﻿
+
+
 
 namespace WebApplication13.Controllers;
 
@@ -20,21 +17,31 @@ namespace WebApplication13.Controllers;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Send(string recieveremail, string message)
+        public async Task<IActionResult> Index(string recieveremail, string message)
         {
             try
             {
               
-              await  mailer.sendmail(recieveremail, message);
+              var x=  mailer.sendmail(recieveremail, message);
 
-                return RedirectToAction("Index","Home");
+            if (x)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+       TempData["message"] = "There is error try again please";
+                return RedirectToAction("Index");
+            }
+                
 
 
             }
             catch (Exception e)
             {
-                ViewBag.message = "There is error try again please";
-                return RedirectToAction("Index");
+            TempData["message"] = "There is error try again please";
+
+            return RedirectToAction("Index");
             }
         }
 

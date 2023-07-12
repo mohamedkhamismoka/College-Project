@@ -2,10 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebApplication13.DAL.Database;
-using WebApplication13.DAL.Entities;
+
 
 namespace WebApplication13.BL.Reposatory
 ;

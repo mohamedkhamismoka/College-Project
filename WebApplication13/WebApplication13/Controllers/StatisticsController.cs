@@ -1,14 +1,5 @@
-﻿using AutoMapper;
-using ClosedXML.Excel;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using WebApplication13.BL;
-using WebApplication13.BL.VM;
-using WebApplication13.DAL.Database;
+﻿
+
 
 namespace WebApplication13.Controllers;
 

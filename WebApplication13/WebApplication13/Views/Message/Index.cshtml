@@ -5,11 +5,13 @@
 }
 <h2>Send E-mail</h2>
 
-<center>
-   <h4 class="text-danger">@ViewBag.message</h4>
-</center>
 
-<form class="create" asp-controller="Message" asp-action="send" method="post">
+
+<form class="create" asp-controller="Message" asp-action="Index" method="post">
+
+    <center>
+   <h4 class="text-danger">@TempData["message"]</h4>
+</center>
     <div class="form-group">
          <label>Enter  Mail:</label>
          <input type="email" name="recieveremail"  required class="form-control"/>

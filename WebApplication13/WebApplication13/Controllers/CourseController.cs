@@ -1,11 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using WebApplication13.BL;
-using WebApplication13.BL.VM;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
-using WebApplication13.DAL.Entities;
+﻿
 
 namespace WebApplication13.Controllers;
 

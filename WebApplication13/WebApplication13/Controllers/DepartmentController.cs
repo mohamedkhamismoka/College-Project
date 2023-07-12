@@ -1,11 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using WebApplication13.BL;
-using WebApplication13.BL.VM;
-using WebApplication13.DAL.Entities;
-
+﻿
 namespace WebApplication13.Controllers;
 
     public class DepartmentController : Controller

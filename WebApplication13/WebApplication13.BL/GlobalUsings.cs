@@ -1,0 +1,13 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using WebApplication13.DAL.Entities;
+global using AutoMapper;
+global using WebApplication13.BL.VM;
+global using Microsoft.EntityFrameworkCore;
+global using System.Linq;
+global using WebApplication13.DAL.Database;
+global using Microsoft.AspNetCore.Http;
+global using System.IO;
+global using MimeKit;
+global using MailKit.Net.Smtp;
+global using System.ComponentModel.DataAnnotations;
