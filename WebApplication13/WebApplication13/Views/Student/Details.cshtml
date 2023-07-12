@@ -1,4 +1,6 @@
 ﻿@model StudentVM
+@inject IstudentCourse StdCrs
+@inject ICourse crs
 @{
     ViewData["Title"] = "Details";
 }
@@ -29,7 +31,7 @@
 
     <div class="form-group">
   <label asp-for="img">  Student image:</label><br />
-      <img src="~/images/@Model.imgname" class="img-thumbnail" width=200 height=200 />
+      <img src="~/images/@Model.imgname" class="img-thumbnail" style="height:150px" />
     </div>
        <div class="form-group">
         <label asp-for="phone"> Student phone:</label><br />
@@ -66,6 +68,29 @@
       
         <a asp-controller="Student" asp-action="Index" class="btn btn-success">Back To Home</a>
         </div>
+    </center>
+    <center>
+        <table class="table table-bordered table-striped table-hover mt-3">
+            <thead>
+                <tr>
+                    <th>Course ID</th>
+                      <th>Course Name</th>
+                      <th>hours</th>
+                      <th>Degree</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in StdCrs.GetStudent_degrees(Model.StudentId))
+                {
+                    <tr>
+                        <td>@item.CourseId</td>
+                        <td>@crs.Getbyid(@item.CourseId).Name</td>
+                           <td>@crs.Getbyid(@item.CourseId).hours</td>
+                        <td>@item.degree</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </center>
 </form>
 

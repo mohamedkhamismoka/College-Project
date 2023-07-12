@@ -12,7 +12,7 @@ using WebApplication13.DAL.Database;
 namespace WebApplication13.DAL.Migrations
 {
     [DbContext(typeof(DataBase))]
-    [Migration("20230711194417_build-db")]
+    [Migration("20230712164044_build-db")]
     partial class builddb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -134,10 +134,10 @@ namespace WebApplication13.DAL.Migrations
 
             modelBuilder.Entity("WebApplication13.DAL.Entities.Student_course", b =>
                 {
-                    b.Property<int>("Std_Id")
+                    b.Property<int>("StudentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Crs_Id")
+                    b.Property<int>("CourseId")
                         .HasColumnType("int");
 
                     b.Property<int>("Academic_year")
@@ -149,9 +149,9 @@ namespace WebApplication13.DAL.Migrations
                     b.Property<int>("degree")
                         .HasColumnType("int");
 
-                    b.HasKey("Std_Id", "Crs_Id");
+                    b.HasKey("StudentId", "CourseId");
 
-                    b.HasIndex("Crs_Id");
+                    b.HasIndex("CourseId");
 
                     b.ToTable("student_Courses");
                 });
@@ -223,8 +223,7 @@ namespace WebApplication13.DAL.Migrations
                 {
                     b.HasOne("WebApplication13.DAL.Entities.Department", "dept")
                         .WithMany("Students")
-                        .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("DepartmentId");
 
                     b.Navigation("dept");
                 });
@@ -233,14 +232,14 @@ namespace WebApplication13.DAL.Migrations
                 {
                     b.HasOne("WebApplication13.DAL.Entities.Course", "course")
                         .WithMany("Students_course")
-                        .HasForeignKey("Crs_Id")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("WebApplication13.DAL.Entities.Student", "student")
                         .WithMany("Students_courses")
-                        .HasForeignKey("Std_Id")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("course");

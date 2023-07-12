@@ -19,25 +19,25 @@ namespace WebApplication13.DAL.Database
        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Student_course>().HasKey(a => new {a.Std_Id,a.Crs_Id});
+            modelBuilder.Entity<Student_course>().HasKey(a => new {a.StudentId,a.CourseId});
 
-        modelBuilder.Entity<Student>()
-      .HasMany(p => p
-      .Students_courses)
-      .WithOne(t => t.student)
-      .OnDelete(DeleteBehavior.Restrict);
+     //   modelBuilder.Entity<Student>()
+     // .HasMany(p => p
+     // .Students_courses)
+     // .WithOne(t => t.student)
+     // .OnDelete(DeleteBehavior.Restrict);
 
 
-        modelBuilder.Entity<Course>()
-     .HasMany(p => p.Students_course)
-     .WithOne(t => t.course)
-     .OnDelete(DeleteBehavior.NoAction);
+     //   modelBuilder.Entity<Course>()
+     //.HasMany(p => p.Students_course)
+     //.WithOne(t => t.course)
+     //.OnDelete(DeleteBehavior.NoAction);
 
-        modelBuilder.Entity<Department>()
+     //   modelBuilder.Entity<Department>()
             
-             .HasMany(p => p.Students)
-             .WithOne(t => t.dept)
-             .OnDelete(DeleteBehavior.Cascade);
+     //        .HasMany(p => p.Students)
+     //        .WithOne(t => t.dept)
+     //        .OnDelete(DeleteBehavior.Cascade);
 
 
 

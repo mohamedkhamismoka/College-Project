@@ -114,9 +114,9 @@
         @foreach (var item in std_crs.GetStudent_Courses(Model.StudentId))
        {
            <tr>
-               <td id="std">@item.Std_Id</td>
-               <td id="crsid">@item.Crs_Id</td>
-                <td id="crs">@crs.getname(item.Crs_Id)</td>
+               <td id="std">@item.StudentId</td>
+               <td id="crsid">@item.CourseId</td>
+                <td id="crs">@crs.getname(item.CourseId)</td>
                 
                 <td id="deg">@item.degree</td>
                 <td> <button class="btn btn-primary upd"><i class="mdi mdi-pencil-box"></i></button></td>

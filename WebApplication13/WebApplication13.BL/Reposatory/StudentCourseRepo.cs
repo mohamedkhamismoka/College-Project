@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -25,21 +26,21 @@ namespace WebApplication13.BL.Reposatory
 
         public void delete(int student_id,int course_id)
         {
-           var data= this.db.student_Courses.Where(a=>a.Std_Id==student_id &&a.Crs_Id==course_id).FirstOrDefault();
+           var data= this.db.student_Courses.Where(a=>a.StudentId==student_id &&a.CourseId==course_id).FirstOrDefault();
             this.db.student_Courses.Remove(data);
             db.SaveChanges();
         }
 
     public void deleteAllForstudent(int student_id)
     {
-        var data = this.db.student_Courses.Where(a => a.Std_Id == student_id);
+        var data = this.db.student_Courses.Where(a => a.StudentId == student_id);
         this.db.student_Courses.RemoveRange(data);
         db.SaveChanges();
     }
 
     public void deleteAllForCourse( int course_id)
     {
-        var data = this.db.student_Courses.Where(a =>  a.Crs_Id == course_id);
+        var data = this.db.student_Courses.Where(a =>  a.CourseId == course_id);
         this.db.student_Courses.RemoveRange(data);
         db.SaveChanges();
     }
@@ -50,12 +51,20 @@ namespace WebApplication13.BL.Reposatory
 
         public IEnumerable<Student_course> GetStudent_Courses(int id)
         {
-            var data= db.student_Courses.Where(a=>a.Std_Id==id);
+            var data= db.student_Courses.Where(a=>a.CourseId==id);
            
             return data;
         }
 
-        public void update(Student_course std_crs)
+    public IEnumerable<Student_course> GetStudent_degrees(int id)
+    {
+        var data = db.student_Courses.Where(a => a.StudentId == id);
+
+        return data;
+    }
+
+
+    public void update(Student_course std_crs)
         {
             db.Entry(std_crs).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             db.SaveChanges();

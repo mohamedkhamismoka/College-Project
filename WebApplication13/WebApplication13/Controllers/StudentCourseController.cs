@@ -38,8 +38,8 @@ namespace WebApplication13.Controllers;
             
                 StudentcourseVM studentcourse = new StudentcourseVM()
                 {
-                    Std_Id = std_id,
-                    Crs_Id = crsid,
+                    StudentId = std_id,
+                    CourseId = crsid,
                     Academic_year = year,
                     Term = term,
                     degree = degree
@@ -63,8 +63,8 @@ namespace WebApplication13.Controllers;
 
             StudentcourseVM studentcourse = new StudentcourseVM()
             {
-                Std_Id = std_id,
-                Crs_Id = crsid,
+                StudentId = std_id,
+                CourseId = crsid,
                 Academic_year = year,
                 Term = term,
                 degree = degree

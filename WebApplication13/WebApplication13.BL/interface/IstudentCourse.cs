@@ -19,5 +19,6 @@ namespace WebApplication13.BL
         public IEnumerable<Student_course> getAll();
    public void deleteAllForstudent(int student_id);
     public void deleteAllForCourse(int course_id);
+    public IEnumerable<Student_course> GetStudent_degrees(int id);
 }
 

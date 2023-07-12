@@ -11,14 +11,14 @@ namespace WebApplication13.DAL.Entities
     public class Student_course
     { 
 
-        public int Std_Id { get; set; }
+        public int StudentId { get; set; }
  
-        public int Crs_Id { get; set; }
+        public int CourseId { get; set; }
       
-    [ForeignKey("Std_Id")]
+   
         public virtual Student student { get; set; }
 
-    [ForeignKey("Crs_Id")]
+    
 
         public virtual Course course { get; set; }
 

@@ -43,8 +43,7 @@ namespace WebApplication13.DAL.Migrations
                         name: "FK_Students_departments_DepartmentId",
                         column: x => x.DepartmentId,
                         principalTable: "departments",
-                        principalColumn: "DepartmentId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "DepartmentId");
                 });
 
             migrationBuilder.CreateTable(
@@ -125,26 +124,27 @@ namespace WebApplication13.DAL.Migrations
                 name: "student_Courses",
                 columns: table => new
                 {
-                    Std_Id = table.Column<int>(type: "int", nullable: false),
-                    Crs_Id = table.Column<int>(type: "int", nullable: false),
+                    StudentId = table.Column<int>(type: "int", nullable: false),
+                    CourseId = table.Column<int>(type: "int", nullable: false),
                     degree = table.Column<int>(type: "int", nullable: false),
                     Academic_year = table.Column<int>(type: "int", nullable: false),
                     Term = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_student_Courses", x => new { x.Std_Id, x.Crs_Id });
+                    table.PrimaryKey("PK_student_Courses", x => new { x.StudentId, x.CourseId });
                     table.ForeignKey(
-                        name: "FK_student_Courses_Courses_Crs_Id",
-                        column: x => x.Crs_Id,
+                        name: "FK_student_Courses_Courses_CourseId",
+                        column: x => x.CourseId,
                         principalTable: "Courses",
-                        principalColumn: "CourseId");
+                        principalColumn: "CourseId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_student_Courses_Students_Std_Id",
-                        column: x => x.Std_Id,
+                        name: "FK_student_Courses_Students_StudentId",
+                        column: x => x.StudentId,
                         principalTable: "Students",
                         principalColumn: "StudentId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -163,9 +163,9 @@ namespace WebApplication13.DAL.Migrations
                 column: "StudentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_student_Courses_Crs_Id",
+                name: "IX_student_Courses_CourseId",
                 table: "student_Courses",
-                column: "Crs_Id");
+                column: "CourseId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Students_DepartmentId",

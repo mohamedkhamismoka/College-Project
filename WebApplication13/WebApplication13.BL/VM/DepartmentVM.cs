@@ -12,7 +12,7 @@ namespace WebApplication13.BL.VM
     {
         public int DepartmentId { get; set; }
         [Required(ErrorMessage = "Department Name Is Required")]
-        [MinLength(3, ErrorMessage = "Min Length Is 3")]
+        [MinLength(2, ErrorMessage = "Min Length Is 2")]
         [MaxLength(30, ErrorMessage = "Max Length Is 30")]
         public string Name { get; set; }
 

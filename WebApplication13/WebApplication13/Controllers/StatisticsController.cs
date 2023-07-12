@@ -39,15 +39,15 @@ namespace WebApplication13.Controllers;
         public IActionResult GetDegree(int courseid)
         {  
             var data = from x in stdcrs.getAll()
-                       where x.Crs_Id == courseid
+                       where x.CourseId == courseid
                        orderby x.degree descending
                        select x;
             ViewBag.passes =  (from x in stdcrs.getAll()
-                             where x.Crs_Id == courseid && x.degree >= 50
+                             where x.CourseId == courseid && x.degree >= 50
 
                              select x).Count() ;
             ViewBag.failed = (from x in stdcrs.getAll()
-                              where x.Crs_Id == courseid && x.degree < 50
+                              where x.CourseId == courseid && x.degree < 50
 
                               select x).Count();
        

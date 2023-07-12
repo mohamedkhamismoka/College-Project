@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ooe+taT2FJNaY+3m9iRPllm2E3Fddo+17HSRc2c4oxA=",
+  "Hash": "N869IyzPgbg8iY2MJ+0utOtJuL5YVYYGyc7WzdD9Rj8=",
   "Source": "WebApplication13",
   "BasePath": "_content/WebApplication13",
   "Mode": "Default",
@@ -25959,6 +25959,23 @@
       "OriginalItemSpec": "wwwroot\\files\\cd91fcd9-2d11-464c-8455-b57ece3968ffmo.txt"
     },
     {
+      "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\files\\d3b98673-24c4-4f8c-ab83-927ec3842ddbcert.txt",
+      "SourceId": "WebApplication13",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\",
+      "BasePath": "_content/WebApplication13",
+      "RelativePath": "files/d3b98673-24c4-4f8c-ab83-927ec3842ddbcert.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\d3b98673-24c4-4f8c-ab83-927ec3842ddbcert.txt"
+    },
+    {
       "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\files\\d59e5142-dbbd-49b3-b90f-217786be1cdcPS.txt",
       "SourceId": "WebApplication13",
       "SourceType": "Discovered",
@@ -26110,6 +26127,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\2e3296ce-93eb-4837-bb1f-fe612323cf87photo_2022-01-20_13-43-37.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\images\\378bafb0-5372-439d-9332-bdb5d21a49a0Capture - Copy.PNG",
+      "SourceId": "WebApplication13",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\",
+      "BasePath": "_content/WebApplication13",
+      "RelativePath": "images/378bafb0-5372-439d-9332-bdb5d21a49a0Capture - Copy.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\378bafb0-5372-439d-9332-bdb5d21a49a0Capture - Copy.PNG"
     },
     {
       "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\images\\3e2188ad-40f8-41a4-9e8c-fbf7c52b8ffdcrt1.PNG",
@@ -26280,6 +26314,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\76692401-e31e-44cb-862c-2e3506f76e87Capture1 - Copy.PNG"
+    },
+    {
+      "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\images\\86a485b4-5ae2-45a6-8f92-f406fa408e97photo_2022-01-20_13-43-37.jpg",
+      "SourceId": "WebApplication13",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\",
+      "BasePath": "_content/WebApplication13",
+      "RelativePath": "images/86a485b4-5ae2-45a6-8f92-f406fa408e97photo_2022-01-20_13-43-37.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\86a485b4-5ae2-45a6-8f92-f406fa408e97photo_2022-01-20_13-43-37.jpg"
     },
     {
       "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\images\\8ecb4fd2-eb5e-4180-8957-b957972cfdf4555.PNG",
