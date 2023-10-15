@@ -15,6 +15,8 @@
 
 <form class="create"  asp-controller="Payment" asp-action="update" method="post"  >
     <div class="form-group">
+
+        <input type="hidden" value="@Model.Id"  asp-for="Id"/>
         <label asp-for="StudentId">  Student ID:</label><br />
        <select asp-for="StudentId" asp-items="(SelectList)ViewBag.students" class="form-control" style="background-color: white;color: black;">
      <option value="0" selected >
@@ -61,7 +63,7 @@
     <center>
         <div style="margin-top:-10px;">
         <button type="submit" class="btn btn-primary" >Update</button>
-        <a asp-controller="Student" asp-action="Index" class="btn btn-success">Back To Home</a>
+        <a asp-controller="Payment" asp-action="Gate" class="btn btn-success">Back To Home</a>
         </div>
     </center>
 </form>

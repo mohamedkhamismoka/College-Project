@@ -14,7 +14,7 @@ namespace WebApplication13.BL;
         public Course Getbyid(int id);
 
         public IEnumerable<Course > filter(Func<Course , bool> filter = null);
-        public string getname(int? id);
+        public string getname(int id);
 
         public int getcount();
     }

@@ -1,6 +1,6 @@
 ﻿
 @model IEnumerable<CourseVM>
-@inject ITeacher tech;
+
 
 @section css{
 
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="~/assets/css/custom.css" />
 }
 
-<div class="card-body" style="position:absolute;width:800px;left:50%;margin-left:-400px;margin-top:5px">
+<div class="card-body" >
     <center>
         <a class="btn btn-danger " asp-controller="Course" asp-action="Create" style="margin-top:-30px"> Create New Course<i class="fas fa-plus" style="margin-left:7px"></i></a>
     </center>
@@ -43,7 +43,7 @@
                         <td>@item.Name</td>
                         <td>@item.hours</td>
                         <th>@item.Teacher.Name</th>
-                        <th>@tech.getTechearDepartmentName(@item.Teacher.TeacherId)</th>
+                        <th>@item.Teacher.dept.Name</th>
                         <td><a class="btn btn-primary" asp-controller="Course" asp-action="Details" asp-route-id="@item.CourseId" style=" padding-top:6px;">Details</a></td>
                         <td><a class="btn btn-warning" asp-controller="Course" asp-action="update" asp-route-id="@item.CourseId" style=" padding-top:6px;">update</a></td>
                         <td><a class="btn btn-danger"  asp-controller="Course" asp-action="Delete" asp-route-id="@item.CourseId" style=" padding-top:6px;">Delete</a></td>

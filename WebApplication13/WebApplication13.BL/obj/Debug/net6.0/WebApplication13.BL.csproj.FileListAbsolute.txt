@@ -1,6 +1,5 @@
 C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\bin\Debug\net6.0\WebApplication13.BL.deps.json
 C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\bin\Debug\net6.0\WebApplication13.BL.dll
-C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\bin\Debug\net6.0\ref\WebApplication13.BL.dll
 C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\bin\Debug\net6.0\WebApplication13.BL.pdb
 C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\bin\Debug\net6.0\WebApplication13.DAL.dll
 C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\bin\Debug\net6.0\WebApplication13.DAL.pdb
@@ -13,3 +12,4 @@ C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplicat
 C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\WebApplication13.BL.dll
 C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\ref\WebApplication13.BL.dll
 C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\WebApplication13.BL.pdb
+C:\Users\EL-Masria\Documents\GitHub\College-Project\WebApplication13\WebApplication13.BL\obj\Debug\net6.0\refint\WebApplication13.BL.dll

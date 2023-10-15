@@ -14,11 +14,7 @@ namespace WebApplication13.BL.Reposatory
         {
             return db.Teachers.Count();
         }
-        public string getTechearDepartmentName(int id)
-        {
-            var data = db.Teachers.Include("dept").Select(a => a);
-            return data.Where(a=>a.TeacherId==id).Select(a=>a.dept.Name).FirstOrDefault();  
-        }
+    
         public void create(Teacher tech)
         {
             db.Teachers.Add(tech);

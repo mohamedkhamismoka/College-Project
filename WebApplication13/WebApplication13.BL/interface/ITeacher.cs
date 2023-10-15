@@ -15,7 +15,7 @@ namespace WebApplication13.BL;
         public Teacher Getbyid(int id);
 
         public IEnumerable<Teacher> filter(Func<Teacher, bool> filter = null);
-        public string getTechearDepartmentName(int id);
+        //public string getTechearDepartmentName(int id);
 
         public int getcount();
     }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lNYib874U1z9yBI+LHFvZP4wjPEAEt0moGHycOtTN54=",
+  "Hash": "nAml8um/ceLg78TqFbKSzX25WYRBBa0uwhSHi16rC5c=",
   "Source": "WebApplication13",
   "BasePath": "_content/WebApplication13",
   "Mode": "Default",
@@ -25840,6 +25840,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\files\\659adbb9-5d9c-4b8a-b476-662e5d1d0610curriculum (4).pdf",
+      "SourceId": "WebApplication13",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\",
+      "BasePath": "_content/WebApplication13",
+      "RelativePath": "files/659adbb9-5d9c-4b8a-b476-662e5d1d0610curriculum (4).pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\659adbb9-5d9c-4b8a-b476-662e5d1d0610curriculum (4).pdf"
+    },
+    {
       "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\files\\858b6781-657a-4f22-87e9-ae4d3d1611aePS.txt",
       "SourceId": "WebApplication13",
       "SourceType": "Discovered",
@@ -26214,6 +26231,23 @@
       "OriginalItemSpec": "wwwroot\\images\\48854b9c-f582-40af-bdcd-971e8f978faccrt2.PNG"
     },
     {
+      "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\images\\498fb038-09fc-4562-86b7-a19095561d552.PNG",
+      "SourceId": "WebApplication13",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\",
+      "BasePath": "_content/WebApplication13",
+      "RelativePath": "images/498fb038-09fc-4562-86b7-a19095561d552.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\498fb038-09fc-4562-86b7-a19095561d552.PNG"
+    },
+    {
       "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\images\\4c5edec8-8923-450d-b0cd-6f4346abb322Capture2 - Copy.PNG",
       "SourceId": "WebApplication13",
       "SourceType": "Discovered",
@@ -26484,6 +26518,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\c2a0bcb3-ee71-4a6c-a995-8aecbbecb621download (1).jfif"
+    },
+    {
+      "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\images\\c8ac4202-e400-40d2-b568-900895622cacCapture.PNG",
+      "SourceId": "WebApplication13",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\",
+      "BasePath": "_content/WebApplication13",
+      "RelativePath": "images/c8ac4202-e400-40d2-b568-900895622cacCapture.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\c8ac4202-e400-40d2-b568-900895622cacCapture.PNG"
     },
     {
       "Identity": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13\\wwwroot\\images\\cde3b898-7917-4487-990d-e86172449a25download (1).jfif",

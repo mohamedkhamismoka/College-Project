@@ -6,36 +6,46 @@
 <link rel="stylesheet" href="~/assets/css/custom.css" />
 <link rel="stylesheet" href="~/assets/css/student.css" />
 <link href="~/assets/jquery-editable-select.css" rel="stylesheet">
-<style>
-    .card{
-       display:inline-block;
-       height:350px;
-       border:1px solid white;
-       padding:0px;
-       margin-left:10px;
-       margin-top:75px;
-       transition:0.3s ease-in-out;
-      opacity:0.7;
-    }
-    .card:hover{
-           border:3px solid red;
-           opacity:inherit;
-    }
-    .card-img-top{
-        height:150px;
-        width:100%;
+    <style>
+        .card {
+            display: inline-block;
+            height: 350px;
+            border: none;
+            padding: 0px;
+            margin-top: 75px;
+            transition: 0.3s ease-in-out;
+            opacity: 0.7;
+        }
 
-    }
-</style>
+            .card .container .parent:hover {
+                border: 3px solid red;
+                opacity: 1;
+            }
+
+        .card-img-top {
+            height: 150px;
+            width: 100%;
+        }
+
+        .card .container .parent {
+            border: 1px solid white;
+            height: 380px;
+            opacity: 0.7;
+            transition: all 0.3s ease-in-out
+        }
+    </style>
 }
 <center>
 <div class="container">
  
+    <div class="row">
 
 
+  <div class="card col-lg-6 col-md-6 col-sm-12">
+            <div class="container">
 
-  <div class="card col-lg-5 col-md-4 col-sm-12">
-    <img class="card-img-top" src="~/assets/images/download (4).jfif" alt="Card image" style="width:100%">
+                <div class="parent">
+    <img class="card-img-top" src="~/assets/images/download (6).jfif" alt="Card image" style="width:100%">
     <div class="card-body">
       <h4 class="card-title">Get Payment Detail</h4>
       <form asp-controller="Statistics" asp-action="GetPayment" method="get">
@@ -53,10 +63,14 @@
       </form>
     </div>
   </div>
+  </div>
+  </div>
 
+    <div class="card col-lg-6 col-md-6 col-sm-12">
+            <div class="container">
 
-    <div class="card col-lg-5 col-md-4 col-sm-12">
-    <img class="card-img-top" src="~/assets/images/download (6).jfif" alt="Card image" style="width:100%">
+                <div class="parent">
+    <img class="card-img-top" src="~/assets/images/download (4).jfif" alt="Card image" style="width:100%">
     <div class="card-body">
       <h4 class="card-title">Course Degress Detail</h4>
       
@@ -78,7 +92,10 @@
 
     </div>
   </div>
-</div> 
+</div>
+        </div>
+    </div>
+    </div>
 </center>
 @section js{
     <script src="~/jquery/jquery.js"></script>

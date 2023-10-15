@@ -1,6 +1,6 @@
 ﻿
 .footer {
-    margin-top: 570px;
+    margin-top: 108%;
 }
 
 body {
@@ -34,3 +34,4 @@ input.form-control, .dataTables_length select {
     height:76px;
     width:70px;
 }
+.card-body{position:absolute;width:85%;left:50%;transform:translateX(-50%)}

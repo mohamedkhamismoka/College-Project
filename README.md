@@ -14,7 +14,7 @@ To run this project locally, you need to have the following prerequisites instal
 
 ### Installation
 
-1. Clone the repository: https://github.com/mohamedkhamismoka/Comapny_System.git
+1. Clone the repository: https://github.com/mohamedkhamismoka/College-Project.git
 
 2. run solution
 

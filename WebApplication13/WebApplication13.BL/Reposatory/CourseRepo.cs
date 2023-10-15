@@ -12,8 +12,9 @@ namespace WebApplication13.BL.Reposatory
             this.db = db;
         }
 
-        public string getname(int? id)
+        public string getname(int id)
         {
+        
             return db.Courses.Where(a=>a.CourseId==id).Select(a=>a.Name).FirstOrDefault();
         }
         public void create(Course crs)
@@ -35,7 +36,7 @@ namespace WebApplication13.BL.Reposatory
 
         public IEnumerable<Course> GetAll()
         {
-            return db.Courses.Include("Teacher").Select(a=>a);
+        return db.Courses.Include(a => a.Teacher).ThenInclude(b => b.dept).Select(a => a);
         }
 
         public Course Getbyid(int id)

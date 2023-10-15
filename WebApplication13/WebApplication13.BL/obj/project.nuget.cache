@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EM5/IiuPr96Nrh//mCosxfpU0ZelmLoW2PXVo0s1XLCm7XIjh4mXXWVhiJAPAqNweLkT+DG9q5tYDjg5zdrRvw==",
+  "dgSpecHash": "oS1pIErZJNxr0chJAHhMxZ3UT3c/yIO2oWAOP3qAyXJTG9digwOEHzeixYWOLXUOYaGMuZNRq4VBx9oDOVjnOg==",
   "success": true,
   "projectFilePath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\College-Project\\WebApplication13\\WebApplication13.BL\\WebApplication13.BL.csproj",
   "expectedPackageFiles": [
@@ -60,7 +60,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'EntityFramework 6.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'EntityFramework 6.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "EntityFramework",
       "targetGraphs": [
         "net6.0"
