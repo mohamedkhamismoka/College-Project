@@ -4,7 +4,7 @@ namespace WebApplication13.DAL.Entities
 ;
     public class Department
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       
         public int DepartmentId { get; set; }
 
         public string Name { get; set; }

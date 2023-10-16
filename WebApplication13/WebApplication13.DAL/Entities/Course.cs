@@ -6,7 +6,7 @@ namespace WebApplication13.DAL.Entities
 ;
     public class Course
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public int CourseId { get; set; } 
 
         public string Name { get; set; }    

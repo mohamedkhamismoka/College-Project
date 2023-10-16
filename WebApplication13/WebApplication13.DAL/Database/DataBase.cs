@@ -14,26 +14,7 @@ namespace WebApplication13.DAL.Database
         {
             modelBuilder.Entity<Student_course>().HasKey(a => new {a.StudentId,a.CourseId});
 
-     //   modelBuilder.Entity<Student>()
-     // .HasMany(p => p
-     // .Students_courses)
-     // .WithOne(t => t.student)
-     // .OnDelete(DeleteBehavior.Restrict);
-
-
-     //   modelBuilder.Entity<Course>()
-     //.HasMany(p => p.Students_course)
-     //.WithOne(t => t.course)
-     //.OnDelete(DeleteBehavior.NoAction);
-
-     //   modelBuilder.Entity<Department>()
-            
-     //        .HasMany(p => p.Students)
-     //        .WithOne(t => t.dept)
-     //        .OnDelete(DeleteBehavior.Cascade);
-
-
-
+   
     }
 
         public virtual DbSet<Student> Students { get; set; }

@@ -7,7 +7,6 @@ namespace WebApplication13.DAL.Entities
     {
 
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
         public int TeacherId { get; set; }
         public string Name { get; set; }

@@ -3,7 +3,7 @@
 namespace WebApplication13.DAL.Entities
 ;
     public class Payment
-    {[DatabaseGenerated(DatabaseGeneratedOption.Identity)]  
+    {
         public int Id { get; set; }
 
 
