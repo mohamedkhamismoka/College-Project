@@ -1,6 +1,8 @@
 ﻿
 
 
+using System.ComponentModel.DataAnnotations;
+
 namespace WebApplication13.DAL.Entities
 ;
     public class Teacher
@@ -9,12 +11,13 @@ namespace WebApplication13.DAL.Entities
 
 
         public int TeacherId { get; set; }
+    [StringLength(20)]
         public string Name { get; set; }
 
-      
-        public DateTime BirthDate { get; set; }
+    [Column(TypeName = "Date")]
+    public DateTime BirthDate { get; set; }
 
-        public virtual IEnumerable<Course> courses { get; set; }
+        public  IEnumerable<Course> courses { get; set; }
 
         public string address { get; set; }
 
@@ -29,7 +32,7 @@ namespace WebApplication13.DAL.Entities
         public int DepartmentId { get; set; }
 
  
-        public virtual Department dept { get; set; }
+        public  Department dept { get; set; }
 
         public string mail { get; set; }
     }

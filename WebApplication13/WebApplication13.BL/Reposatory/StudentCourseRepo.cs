@@ -29,12 +29,7 @@ namespace WebApplication13.BL.Reposatory
         db.SaveChanges();
     }
 
-    public void deleteAllForCourse( int course_id)
-    {
-        var data = this.db.student_Courses.Where(a =>  a.CourseId == course_id);
-        this.db.student_Courses.RemoveRange(data);
-        db.SaveChanges();
-    }
+
     public IEnumerable<Student_course> getAll()
         {
             return db.student_Courses.Select(a => a);

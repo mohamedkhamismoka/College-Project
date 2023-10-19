@@ -34,9 +34,10 @@ namespace WebApplication13.DAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("TeacherId")
+                    b.Property<int>("TeacherId")
                         .HasColumnType("int");
 
                     b.Property<int>("hours")
@@ -103,9 +104,9 @@ namespace WebApplication13.DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentId"), 1L, 1);
 
                     b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("Date");
 
-                    b.Property<int?>("DepartmentId")
+                    b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -163,7 +164,7 @@ namespace WebApplication13.DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TeacherId"), 1L, 1);
 
                     b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("Date");
 
                     b.Property<string>("Cvname")
                         .HasColumnType("nvarchar(max)");
@@ -172,7 +173,8 @@ namespace WebApplication13.DAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("address")
                         .HasColumnType("nvarchar(max)");
@@ -201,7 +203,9 @@ namespace WebApplication13.DAL.Migrations
 
                     b.HasOne("WebApplication13.DAL.Entities.Teacher", "Teacher")
                         .WithMany("courses")
-                        .HasForeignKey("TeacherId");
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Teacher");
                 });
@@ -221,7 +225,9 @@ namespace WebApplication13.DAL.Migrations
                 {
                     b.HasOne("WebApplication13.DAL.Entities.Department", "dept")
                         .WithMany("Students")
-                        .HasForeignKey("DepartmentId");
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("dept");
                 });
@@ -237,7 +243,7 @@ namespace WebApplication13.DAL.Migrations
                     b.HasOne("WebApplication13.DAL.Entities.Student", "student")
                         .WithMany("Students_courses")
                         .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("course");

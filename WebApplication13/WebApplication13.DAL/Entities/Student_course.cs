@@ -10,11 +10,11 @@ namespace WebApplication13.DAL.Entities
         public int CourseId { get; set; }
       
    
-        public virtual Student student { get; set; }
+        public  Student student { get; set; }
 
     
 
-        public virtual Course course { get; set; }
+        public  Course course { get; set; }
 
         public int degree { get; set; }
 

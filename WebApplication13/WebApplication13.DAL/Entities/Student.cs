@@ -11,17 +11,18 @@ namespace WebApplication13.DAL.Entities
         public int StudentId { get; set; }
         public string Name { get; set; }
 
-    public virtual IEnumerable<Payment> payments { get; set; }
+    public  IEnumerable<Payment> payments { get; set; }
+    [Column(TypeName ="Date")]
     public DateTime BirthDate { get; set; }
 
         public string address { get; set; }
-        public virtual IEnumerable<Student_course> Students_courses { get; set; }
+        public  IEnumerable<Student_course> Students_courses { get; set; }
         public string phone { get; set; }
 
-    public int? DepartmentId { get; set; }
+    public int DepartmentId { get; set; }
 
 
-    public virtual Department dept { get; set; }
+    public  Department dept { get; set; }
 
 
 

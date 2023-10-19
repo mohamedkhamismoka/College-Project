@@ -12,7 +12,7 @@ namespace WebApplication13.DAL.Entities
  
         public int StudentId { get; set; }
    
-        public virtual Student student { get; set; }    
+        public  Student student { get; set; }    
         public int Term { get; set; }
 
         public int money { get; set; }

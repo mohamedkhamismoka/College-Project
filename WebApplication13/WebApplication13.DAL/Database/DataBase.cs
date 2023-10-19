@@ -12,21 +12,23 @@ namespace WebApplication13.DAL.Database
        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Student_course>().HasKey(a => new {a.StudentId,a.CourseId});
+            modelBuilder.Entity<Student_course>().HasOne(a=>a.student).WithMany(a=>a.Students_courses).OnDelete(deleteBehavior:DeleteBehavior.NoAction);
+        modelBuilder.Entity<Student_course>().HasKey(a => new { a.StudentId, a.CourseId });
 
-   
+
+
     }
 
-        public virtual DbSet<Student> Students { get; set; }
-        public virtual DbSet<Course> Courses { get; set; }
+        public  DbSet<Student> Students { get; set; }
+        public  DbSet<Course> Courses { get; set; }
 
-        public virtual DbSet<Teacher> Teachers { get; set; }
+        public  DbSet<Teacher> Teachers { get; set; }
 
-        public virtual DbSet<Payment> payments { get; set; }
-        public virtual DbSet<Department> departments { get; set; }
+        public  DbSet<Payment> payments { get; set; }
+        public  DbSet<Department> departments { get; set; }
 
 
-        public virtual DbSet<Student_course> student_Courses { get; set; }  
+        public  DbSet<Student_course> student_Courses { get; set; }  
         
 
     }
